@@ -4,6 +4,27 @@ All notable changes to janefskills are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/), and the project aims to follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] — 2026-08-24
+
+### Added
+- Claude Code plugin and marketplace manifests without moving the eight existing
+  skill directories.
+- Codex `agents/openai.yaml` metadata for every skill.
+- Safe cross-host installer with dry-run, selective installation, overwrite
+  refusal, timestamped backups, and rollback.
+- Repository validator, installer tests, cross-platform CI, structured issue
+  templates, and release documentation.
+- Privacy and retention guidance for security audit logs.
+
+### Changed
+- Installation documentation now recommends the Claude Code marketplace and
+  supports Claude Code plus Codex from the same source tree.
+- NoSQL and SSRF remediation examples now use strict validation and stronger DNS
+  and egress guidance.
+- Secret examples use unmistakable placeholders, with exact historical false
+  positives documented for reproducible secret scanning.
+- Copyright presentation is normalized to `ALJANEF`.
+
 ## [1.1.0] — 2026
 
 ### Added

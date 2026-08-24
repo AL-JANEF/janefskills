@@ -1,54 +1,54 @@
-# GitHub Repository Setup
+# Publishing and Repository Setup
 
-Copy-paste values for setting up the public repository. Not part of the skills —
-just a helper for publishing.
+This file records public repository metadata and the release workflow. Runtime
+skills do not load it.
 
-## Repository name
-```
-janefskills
-```
+## Repository metadata
 
-## Description (the "About" field, ~120 chars)
-```
-Defensive security & production-grade engineering skills for Claude Code — auth, OWASP audit, threat modeling, secrets, logging.
+**Description**
+
+```text
+Defensive security and production-engineering skills for Claude Code and Codex — auth, OWASP, threats, secrets, and logging.
 ```
 
-## Topics (add these in the About → ⚙ → Topics field, for discoverability)
-```
-claude-code
-claude
-anthropic
+**Topics**
+
+```text
 agent-skills
-security
 appsec
-owasp
 authentication
-threat-modeling
+claude-code
+codex
+defensive-security
 devsecops
+owasp
 secure-coding
+security
 skills
+threat-modeling
 ```
 
-## Suggested first-release steps
+## Claude Code marketplace
 
-1. Create the repo on GitHub as **public**, name `janefskills`, no auto-README
-   (this repo already has one).
-2. From inside the unzipped `janefskills/` folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: janefskills 1.0.0 — 6 skills for secure, production-grade engineering"
-   git branch -M main
-   git remote add origin https://github.com/AL-JANEF/janefskills.git
-   git push -u origin main
-   ```
-3. In the repo's **About** panel, paste the description and add the topics above.
-4. Optionally cut a release tagged `v1.0.0` (Releases → Draft a new release),
-   using the `CHANGELOG.md` entry as the notes.
+The repository is its own marketplace. Users install it inside Claude Code with:
 
-## Recommended before going public
+```text
+/plugin marketplace add AL-JANEF/janefskills
+/plugin install janefskills@janefskills
+```
 
-Try the skills on a real project first. Start a task in a skill's area
-(e.g. "review the login flow for security") and confirm the right skill engages.
-If a skill doesn't trigger when expected, tighten the `description` in its
-`SKILL.md` — the description is what decides activation.
+The plugin version is pinned in both files under `.claude-plugin/`. Bump both on
+every release so installed users receive updates.
+
+## Release workflow
+
+Follow [docs/releasing.md](./docs/releasing.md). Do not create a tag until the
+local gate and Claude plugin validation pass on the exact release commit.
+
+## Recommended GitHub settings
+
+- Keep private vulnerability reporting enabled.
+- Keep secret scanning and push protection enabled when GitHub offers them.
+- Require the CI workflow before merging changes to `main`.
+- Review dependency and action updates manually; no automated update bot is
+  required by this repository.

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Secrets Guard"
+  short_description: "Prevent and respond to credential and secret leaks"
+  brand_color: "#D4AF61"
+  default_prompt: "Use $secrets-guard to check this project for exposed or misplaced secrets."

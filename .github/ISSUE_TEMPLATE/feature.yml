@@ -1,0 +1,26 @@
+name: Improvement proposal
+description: Propose a focused defensive capability or quality improvement.
+title: "[Enhancement]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the defensive or engineering gap and who encounters it.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Explain the observable behavior that should improve.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and boundaries
+      description: State what should remain out of scope, especially any offensive use.
+    validations:
+      required: true

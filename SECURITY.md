@@ -2,10 +2,11 @@
 
 ## Scope
 
-This repository contains **documentation-only** skills — Markdown instructions and
-illustrative code snippets for [Claude Code](https://docs.claude.com/en/docs/claude-code).
-It ships no runnable application, service, or binary. There is no server to
-compromise and no dependency to exploit.
+This repository contains Markdown skills, illustrative code snippets, and small
+standard-library utilities for installation and repository validation. It ships
+no service, privileged daemon, dependency bundle, or remote execution component.
+The installer copies only selected skill directories and refuses to replace an
+existing installation unless the user explicitly chooses `--force`.
 
 That said, the *content* still matters: a skill that gave wrong or dangerous
 guidance would be a real problem. This policy covers that.
@@ -17,6 +18,8 @@ guidance would be a real problem. This policy covers that.
 - Guidance that could be **misused offensively**, or that drifts from the
   defensive-only principle.
 - A factual error in a security claim that could lead someone to ship unsafe code.
+- Installer behavior that overwrites, escapes the requested destination, or fails
+  to preserve an existing skill as documented.
 
 ## How to report
 
@@ -30,6 +33,9 @@ Instead:
 
 Include the skill and section involved, what's wrong, and — if you have one — the
 corrected guidance.
+
+Never attach live credentials, private source code, or personal data. Use a
+minimal redacted reproduction.
 
 ## What to expect
 

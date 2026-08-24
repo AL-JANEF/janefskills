@@ -47,6 +47,10 @@ target (what was affected), source (IP / request id), and outcome
 (success/failure). For mutations, capturing before/after (or a diff) makes the log
 genuinely useful for reconstruction.
 
+Treat IP addresses, device identifiers, and location as sensitive operational
+data. Minimize and retain them only for a defined detection or investigation use
+case; see `references/privacy-and-retention.md`.
+
 ### 2. Never leak into the logs
 
 Logs are frequently shipped to third parties, cached, and widely readable — so
@@ -111,3 +115,6 @@ fires. Evidence, not assertion.
 - `references/patterns.md` — Copyable audit-log entry structure, redaction
   helpers, and example detection rules (failed-login threshold, etc.). Read it
   when implementing logging or detection.
+- `references/privacy-and-retention.md` — Data minimization, retention, access,
+  and verification guidance. Read it when logs include identifiers, IPs, device
+  data, or location.

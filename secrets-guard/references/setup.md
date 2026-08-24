@@ -26,7 +26,7 @@ Commit this; it documents required variables with placeholder values.
 DATABASE_URL=postgres://user:password@localhost:5432/dbname
 
 # Third-party services
-STRIPE_SECRET_KEY=sk_test_placeholder
+STRIPE_SECRET_KEY=replace_me
 WHATSAPP_API_TOKEN=placeholder
 
 # Auth

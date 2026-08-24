@@ -1,0 +1,29 @@
+{
+  "name": "janefskills",
+  "description": "Eight defensive security and evidence-gated engineering skills for Claude Code.",
+  "version": "1.2.0",
+  "author": {
+    "name": "ALJANEF",
+    "url": "https://github.com/AL-JANEF"
+  },
+  "homepage": "https://github.com/AL-JANEF/janefskills",
+  "repository": "https://github.com/AL-JANEF/janefskills",
+  "license": "MIT",
+  "keywords": [
+    "application-security",
+    "agent-skills",
+    "claude-code",
+    "secure-coding",
+    "threat-modeling"
+  ],
+  "skills": [
+    "./janef",
+    "./engineering-standard",
+    "./threat-model",
+    "./auth-hardening",
+    "./vuln-audit",
+    "./variant-hunt",
+    "./secrets-guard",
+    "./security-logging"
+  ]
+}

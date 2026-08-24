@@ -11,6 +11,7 @@ description: >-
   engineering-standard) or runs a full audit-grade pass. Use whenever the user
   wants a serious security review. Defensive only: it finds, verifies, and fixes
   — it never writes exploits or attacks systems.
+license: MIT
 ---
 
 # janef — advanced security & engineering command

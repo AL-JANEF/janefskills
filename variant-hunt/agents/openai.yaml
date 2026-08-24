@@ -1,0 +1,5 @@
+interface:
+  display_name: "Variant Hunt"
+  short_description: "Find and eradicate every sibling of a known bug"
+  brand_color: "#D4AF61"
+  default_prompt: "Use $variant-hunt to search the codebase for variants of this finding."

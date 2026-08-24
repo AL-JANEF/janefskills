@@ -1,0 +1,5 @@
+interface:
+  display_name: "Vulnerability Audit"
+  short_description: "Audit application code for OWASP-class weaknesses"
+  brand_color: "#D4AF61"
+  default_prompt: "Use $vuln-audit to audit this code and rank actionable findings."

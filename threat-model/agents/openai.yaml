@@ -1,0 +1,5 @@
+interface:
+  display_name: "Threat Model"
+  short_description: "Model system threats with STRIDE before building"
+  brand_color: "#D4AF61"
+  default_prompt: "Use $threat-model to identify risks and mitigations for this design."

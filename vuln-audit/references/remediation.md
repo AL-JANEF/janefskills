@@ -31,10 +31,11 @@ prisma.user.findUnique({ where: { email } });
 db.users.findOne({ email: req.body.email, password: req.body.password });
 // attacker sends { "email": {"$gt":""}, "password": {"$gt":""} }
 ```
-**Fixed (coerce to expected type):**
+**Fixed (validate and reject unexpected types):**
 ```js
-const email = String(req.body.email);
-const password = String(req.body.password);
+const parsed = loginSchema.safeParse(req.body);
+if (!parsed.success) return res.status(400).end();
+const { email, password } = parsed.data; // schema requires bounded strings
 ```
 
 **Command — vulnerable:**
@@ -116,14 +117,18 @@ Token-only APIs without cookies generally don't need CSRF tokens.
 ```js
 const data = await fetch(req.body.url);
 ```
-**Fixed — allowlist + block private ranges + no internal redirects:**
+**Fixed — allowlist + resolve every address + no internal redirects:**
 ```js
 const url = new URL(req.body.url);
 if (!ALLOWED_HOSTS.has(url.hostname)) return res.status(400).end();
-const ip = await resolve(url.hostname);
-if (isPrivate(ip)) return res.status(400).end();   // 10.x, 127.x, 169.254.x, ::1
+const addresses = await resolveAll(url.hostname);
+if (!addresses.length || addresses.some(isPrivate)) return res.status(400).end();
 const data = await fetch(url, { redirect: 'error' });
 ```
+
+Enforce the same destination policy at the network egress layer and ensure the
+HTTP client connects to an address that was actually validated; otherwise DNS
+rebinding can separate validation from connection.
 
 ---
 

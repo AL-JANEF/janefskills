@@ -1,0 +1,5 @@
+interface:
+  display_name: "Auth Hardening"
+  short_description: "Harden authentication, sessions, tokens, and MFA"
+  brand_color: "#D4AF61"
+  default_prompt: "Use $auth-hardening to review and strengthen this authentication flow."

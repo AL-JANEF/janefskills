@@ -52,7 +52,7 @@ provider. See `references/leak-response.md`.
 Secrets load from environment variables (or a secret manager), never from source:
 ```
 // wrong — in source
-const key = "sk_live_abc123";
+const key = "replace-me";
 
 // right — from environment
 const key = process.env.STRIPE_SECRET_KEY;

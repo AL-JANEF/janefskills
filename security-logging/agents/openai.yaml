@@ -1,0 +1,5 @@
+interface:
+  display_name: "Security Logging"
+  short_description: "Design safe audit logging and actionable detection"
+  brand_color: "#D4AF61"
+  default_prompt: "Use $security-logging to design a safe, useful audit trail for this system."

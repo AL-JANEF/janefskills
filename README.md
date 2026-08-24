@@ -5,16 +5,18 @@
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-D4AF61" alt="MIT License">
   <img src="https://img.shields.io/badge/skills-8-16273F" alt="8 skills">
+  <img src="https://img.shields.io/badge/version-1.2.0-D4AF61" alt="Version 1.2.0">
   <img src="https://img.shields.io/badge/scope-defensive%20only-0E1A2B" alt="Defensive only">
   <img src="https://img.shields.io/badge/methodology-audit--grade-1A2E4A" alt="Audit-grade methodology">
-  <img src="https://img.shields.io/badge/for-Claude%20Code-9DB0C8" alt="For Claude Code">
+  <img src="https://img.shields.io/badge/Claude%20Code-primary-9DB0C8" alt="Claude Code primary">
+  <img src="https://img.shields.io/badge/Codex-metadata-16273F" alt="Codex metadata">
 </p>
 
 <h1 align="center">janefskills</h1>
 
 <p align="center">
   <strong>Eight defensive-security and engineering skills that give Claude the instincts of a security-minded staff engineer.</strong><br>
-  Built for <a href="https://docs.claude.com/en/docs/claude-code">Claude Code</a> and any agent supporting the <a href="https://docs.claude.com">Agent Skills</a> format.
+  Built for <a href="https://code.claude.com/docs/en/overview">Claude Code</a>, with Codex UI metadata and portable Agent Skills structure.
 </p>
 
 ---
@@ -156,53 +158,66 @@ and `/janef` ties them together into a single command and reference.
 
 ## Install
 
-### Claude Code
+### Claude Code marketplace (recommended)
+
+Inside Claude Code:
+
+```text
+/plugin marketplace add AL-JANEF/janefskills
+/plugin install janefskills@janefskills
+```
+
+The plugin keeps every skill namespaced under `janefskills`, supports versioned
+updates, and can be refreshed with `/plugin marketplace update`.
+
+### Local development
 
 ```bash
 git clone https://github.com/AL-JANEF/janefskills.git
+cd janefskills
+claude --plugin-dir .
 ```
 
-Copy the skills you want into your Claude Code skills directory.
+Use `/janefskills:janef` for the orchestrator, or let Claude select a specialist
+from the task description.
 
-**macOS / Linux:**
+### Personal installation for Claude Code and Codex
+
+The installer refuses to overwrite existing skills. With `--force`, it preserves
+every previous skill directory as a timestamped backup before replacement.
+
 ```bash
-cp -r janefskills/janef \
-      janefskills/engineering-standard \
-      janefskills/threat-model \
-      janefskills/auth-hardening \
-      janefskills/vuln-audit \
-      janefskills/variant-hunt \
-      janefskills/secrets-guard \
-      janefskills/security-logging \
-      ~/.claude/skills/
+python3 scripts/install.py --target both --dry-run
+python3 scripts/install.py --target both
 ```
 
-**Windows (PowerShell):**
+On Windows PowerShell, use the same installer with `python`:
+
 ```powershell
-Copy-Item -Recurse janefskills\janef                $env:USERPROFILE\.claude\skills\
-Copy-Item -Recurse janefskills\engineering-standard $env:USERPROFILE\.claude\skills\
-Copy-Item -Recurse janefskills\threat-model         $env:USERPROFILE\.claude\skills\
-Copy-Item -Recurse janefskills\auth-hardening       $env:USERPROFILE\.claude\skills\
-Copy-Item -Recurse janefskills\vuln-audit           $env:USERPROFILE\.claude\skills\
-Copy-Item -Recurse janefskills\variant-hunt         $env:USERPROFILE\.claude\skills\
-Copy-Item -Recurse janefskills\secrets-guard        $env:USERPROFILE\.claude\skills\
-Copy-Item -Recurse janefskills\security-logging     $env:USERPROFILE\.claude\skills\
+python scripts\install.py --target both --dry-run
+python scripts\install.py --target both
 ```
 
-> **Note:** Claude Code reads skills from `~/.claude/skills` (the `.claude`
-> folder), **not** `~/.agents/skills`. Verify with `ls ~/.claude/skills`
-> (or `dir $env:USERPROFILE\.claude\skills` on Windows).
+Install a subset with `--only`, for example:
 
-Restart Claude Code. The skills appear automatically and trigger on relevant
-tasks — you don't call them by name. To confirm a skill is active, start a task in
-its area (e.g. "review the login flow for security") and watch it engage.
+```bash
+python3 scripts/install.py --target claude --only janef vuln-audit secrets-guard
+```
+
+If a dry run reports an existing installation, review the listed destinations.
+Add `--force` only when you want the installer to preserve each current directory
+as a timestamped backup and replace it.
+
+Claude Code detects changes live when the skills directory was already being
+watched; if the directory is new, restart once. Codex loads newly installed
+skills on the next task.
 
 ---
 
 ## Usage
 
-You don't invoke these skills manually — they trigger on what you're doing. Some
-examples of prompts that engage them:
+Skills can trigger from what you're doing, and you can invoke the orchestrator
+explicitly when you want a coordinated pass. Examples:
 
 - *"Review this authentication code before I ship it."* → `auth-hardening` +
   `vuln-audit`
@@ -251,8 +266,23 @@ Written primarily for modern web stacks — **TypeScript, Node.js, Next.js**, an
 similar — with patterns that transfer to other languages. The security principles
 are stack-agnostic; the code examples are illustrative and meant to be adapted.
 
-Requires [Claude Code](https://docs.claude.com/en/docs/claude-code) or another
-agent supporting the Agent Skills (`SKILL.md`) format.
+Claude Code is the primary and fully packaged host. Codex receives an
+`agents/openai.yaml` interface for each skill. Other Agent Skills hosts can use
+the portable `SKILL.md` directories, but behavioral parity is not claimed until
+tested. See [compatibility](./docs/compatibility.md).
+
+---
+
+## Development
+
+Run the complete local gate before proposing or publishing a change:
+
+```bash
+make check
+```
+
+See the [architecture](./docs/architecture.md), [compatibility matrix](./docs/compatibility.md),
+and [release guide](./docs/releasing.md) for maintenance details.
 
 ---
 
@@ -269,7 +299,7 @@ concern.
 
 ## License
 
-[MIT](./LICENSE) © 2026 aljanef
+[MIT](./LICENSE) © 2026 ALJANEF
 
 Free to use, modify, and distribute. If these skills help you ship safer
 software, a star on the repo helps others find them.

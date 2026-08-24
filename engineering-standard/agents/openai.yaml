@@ -1,0 +1,5 @@
+interface:
+  display_name: "Engineering Standard"
+  short_description: "Evidence-gated production engineering standard"
+  brand_color: "#D4AF61"
+  default_prompt: "Use $engineering-standard to review this change for production readiness."

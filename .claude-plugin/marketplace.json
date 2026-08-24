@@ -1,0 +1,38 @@
+{
+  "name": "janefskills",
+  "owner": {
+    "name": "ALJANEF",
+    "url": "https://github.com/AL-JANEF"
+  },
+  "description": "Defensive security and production-engineering skills maintained by ALJANEF.",
+  "version": "1.2.0",
+  "plugins": [
+    {
+      "name": "janefskills",
+      "displayName": "janefskills",
+      "source": "./",
+      "description": "Eight defensive security and evidence-gated engineering skills for Claude Code.",
+      "version": "1.2.0",
+      "author": {
+        "name": "ALJANEF",
+        "url": "https://github.com/AL-JANEF"
+      },
+      "homepage": "https://github.com/AL-JANEF/janefskills",
+      "repository": "https://github.com/AL-JANEF/janefskills",
+      "license": "MIT",
+      "keywords": [
+        "application-security",
+        "agent-skills",
+        "claude-code",
+        "secure-coding"
+      ],
+      "category": "security",
+      "tags": [
+        "appsec",
+        "defensive-security",
+        "engineering"
+      ],
+      "strict": true
+    }
+  ]
+}
