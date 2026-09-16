@@ -10,6 +10,9 @@
   <img src="https://img.shields.io/badge/methodology-audit--grade-1A2E4A" alt="Audit-grade methodology">
   <img src="https://img.shields.io/badge/Claude%20Code-primary-9DB0C8" alt="Claude Code primary">
   <img src="https://img.shields.io/badge/Codex-metadata-16273F" alt="Codex metadata">
+  <br>
+  <img src="https://img.shields.io/github/stars/AL-JANEF/janefskills?style=flat&color=D4AF61" alt="GitHub stars">
+  <img src="https://img.shields.io/github/last-commit/AL-JANEF/janefskills?color=16273F" alt="Last commit">
 </p>
 
 <h1 align="center">janefskills</h1>
@@ -64,9 +67,9 @@ review, professional audit methodology (variant analysis, fix verification,
 constant-time review), and an *honest coverage verdict*.
 
 ```
-/janef review the login flow      → routes to auth-hardening
-/janef audit this file            → routes to vuln-audit
-/janef full security pass         → runs all layers, one consolidated report
+/janef review the login flow → routes to auth-hardening
+/janef audit this file → routes to vuln-audit
+/janef full security pass → runs all layers, one consolidated report
 ```
 
 It never claims "secure" unqualified — it states which layers ran and what class
@@ -127,25 +130,25 @@ failed-login thresholds. Triggers on audit trails, logging, and monitoring work.
 ### How they fit together
 
 ```
-                         ┌───────────────────────────────┐
-                         │            /janef             │  ← one command,
-                         │   orchestrates + references   │    routes to any skill
-                         └───────────────────────────────┘
-                                       │
-   ┌─────────── DESIGN ───────────┬─────── BUILD ───────┬──────── AUDIT ─────────┐
-   │                              │                     │                        │
-   ▼                              ▼                     ▼                        ▼
-threat-model            auth-hardening          vuln-audit  ──►  variant-hunt
-(risks, pre-code)       secrets-guard           (find the bug)   (find its siblings)
-                                                security-logging
-   │                              │                     │                        │
-   └──────────────────────────────┴─────────────────────┴────────────────────────┘
-                                       │
-                                       ▼
-                          ┌───────────────────────────┐
-                          │    engineering-standard   │  ← the bar under all of it:
-                          │   truth · evidence · gate │    proof before "done"
-                          └───────────────────────────┘
+┌───────────────────────────────┐
+│           /janef               │  ← one command,
+│  orchestrates + references     │    routes to any skill
+└───────────────────────────────┘
+              │
+┌─────────── DESIGN ───────────┬─────── BUILD ───────┬──────── AUDIT ─────────┐
+│                               │                      │                        │
+▼                               ▼                      ▼                        ▼
+threat-model              auth-hardening          vuln-audit ──► variant-hunt
+(risks, pre-code)         secrets-guard            (find the bug)  (find its siblings)
+                           security-logging
+│                               │                      │                        │
+└──────────────────────────────┴─────────────────────┴────────────────────────┘
+                                          │
+                                          ▼
+                        ┌───────────────────────────┐
+                        │   engineering-standard      │  ← the bar under all of it:
+                        │   truth · evidence · gate   │    proof before "done"
+                        └───────────────────────────┘
 ```
 
 `threat-model` names the risks before code exists; `auth-hardening` and
@@ -230,6 +233,28 @@ explicitly when you want a coordinated pass. Examples:
 Each produces a severity-ranked report or an implementation with evidence — and
 holds itself to proving claims rather than asserting them.
 
+### Example: a `/janef audit` pass
+
+Illustrative shape of a finding, condensed from a real login-flow review:
+
+```text
+$ /janef audit src/api/auth/login.ts
+
+[HIGH]   Session token stored in localStorage
+         → readable by any injected script; move to an httpOnly, Secure,
+           SameSite=Strict cookie.
+
+[MEDIUM] Login error message differs for "no such user" vs "wrong password"
+         → account-enumeration leak; return one generic error for both.
+
+Layers run: static pattern review, OWASP Top 10 checklist.
+Layers not run: Semgrep SAST, dependency audit — `/janef full security pass`
+for full coverage.
+```
+
+The report format is real; the file and findings above are illustrative, not a
+captured run.
+
 ---
 
 ## How these skills work
@@ -294,6 +319,16 @@ Because these are security skills, contributions must stay **strictly
 defensive**. Anything that facilitates unauthorized access, data exfiltration, or
 attack will not be accepted. See [SECURITY.md](./SECURITY.md) for how to report a
 concern.
+
+---
+
+## Built by a practitioner
+
+janefskills comes out of real production work, not a classroom exercise.
+[ALJANEF](https://github.com/AL-JANEF) is a solo founder building a portfolio of
+AI-native ventures for Gulf markets, and wrote this suite to hold Claude to the
+same evidence-before-done standard those systems are built under. More projects
+on the [profile](https://github.com/AL-JANEF?tab=repositories).
 
 ---
 
