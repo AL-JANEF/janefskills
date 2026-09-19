@@ -1,0 +1,20 @@
+{
+  "id": "standard",
+  "name": "Standard",
+  "description": "Production engineering default. Loads the minimum domain capabilities the task needs and applies risk-based verification; escalates to high-assurance when risk is high or critical.",
+  "max_skills": 4,
+  "max_references": 3,
+  "verification_floor": "low",
+  "independent_review": "high-risk",
+  "delegation": "selective",
+  "auto_include": {
+    "high": [
+      "testing-verification"
+    ],
+    "critical": [
+      "testing-verification",
+      "review-defect-first"
+    ]
+  },
+  "auto_escalate": true
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AL-JANEF/janefskills/schemas/capability.schema.json",
+  "title": "JANEF Forge capability manifest",
+  "description": "Machine-readable declaration of one skill. Validated by core/schema.py (stdlib subset validator) and by the registry.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "name", "version", "domain", "description", "triggers", "negative_triggers",
+    "risk_level", "context_cost", "requires", "optional_with", "conflicts_with",
+    "verification_requirements", "supported_hosts", "references", "status", "responsibilities"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 40},
+    "name": {"type": "string", "minLength": 3, "maxLength": 60},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "domain": {"type": "string", "enum": ["core", "engineering", "security", "compat"]},
+    "description": {"type": "string", "minLength": 40, "maxLength": 1024},
+    "triggers": {"type": "array", "items": {"type": "string", "minLength": 2, "maxLength": 60}, "uniqueItems": true},
+    "negative_triggers": {"type": "array", "items": {"type": "string", "minLength": 2, "maxLength": 60}, "uniqueItems": true},
+    "risk_level": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+    "context_cost": {"type": "string", "enum": ["small", "medium", "large"]},
+    "requires": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "optional_with": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "conflicts_with": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "verification_requirements": {"type": "array", "items": {"type": "string", "minLength": 5}},
+    "supported_hosts": {"type": "array", "items": {"type": "string", "enum": ["claude-code", "codex"]}, "minItems": 1, "uniqueItems": true},
+    "references": {"type": "array", "items": {"type": "string", "pattern": "^references/[a-z0-9-]+\\.md$"}, "uniqueItems": true},
+    "status": {"type": "string", "enum": ["stable", "experimental", "deprecated"]},
+    "responsibilities": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "minItems": 1, "uniqueItems": true},
+    "priority": {"type": "integer", "minimum": 0, "maximum": 100},
+    "replaced_by": {"type": "string"},
+    "provenance": {"type": "array", "items": {"type": "string"}}
+  }
+}

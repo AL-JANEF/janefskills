@@ -1,0 +1,15 @@
+{
+  "id": "lean",
+  "name": "Lean",
+  "description": "Minimal necessary context for focused, well-understood changes. Single agent, targeted inspection, smallest correct diff, focused verification. Security floor is never lowered.",
+  "max_skills": 2,
+  "max_references": 1,
+  "verification_floor": "low",
+  "independent_review": "never",
+  "delegation": "single-agent",
+  "auto_include": {
+    "high": ["testing-verification"],
+    "critical": ["testing-verification"]
+  },
+  "auto_escalate": false
+}

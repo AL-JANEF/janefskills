@@ -1,0 +1,20 @@
+{
+  "method": "estimated structural context cost = ceil(UTF-8 characters / 4); not a provider billing measurement",
+  "core_contract_max_tokens": 700,
+  "entry_skill_max_tokens": 1900,
+  "always_loaded_metadata_max_tokens": 2600,
+  "skill_body_max_tokens": 1800,
+  "profile_selected_max_tokens": {
+    "lean": 5200,
+    "standard": 7500,
+    "high-assurance": 11000
+  },
+  "minimum_median_route_savings": 0.7,
+  "routing_eval_thresholds": {
+    "min_exact_match_rate": 0.9,
+    "max_false_positive_rate": 0.05,
+    "max_false_negative_rate": 0.05,
+    "min_risk_accuracy": 0.9,
+    "min_negative_case_accuracy": 1.0
+  }
+}
