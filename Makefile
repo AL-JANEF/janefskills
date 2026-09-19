@@ -1,12 +1,19 @@
-.PHONY: validate test check install-dry-run
+.PHONY: validate test evals benchmark gate package
 
 validate:
-	./scripts/validate.sh
+	python3 scripts/forge.py validate
 
 test:
-	./scripts/test.sh
+	python3 -m unittest discover -s tests -t . -p 'test_*.py'
 
-check: validate test
+evals:
+	python3 evals/run_routing_eval.py --check
 
-install-dry-run:
-	./scripts/install.py --target both --force --dry-run
+benchmark:
+	python3 benchmarks/context_benchmark.py --check
+
+gate:
+	python3 scripts/quality_gate.py
+
+package: gate
+	python3 scripts/package_release.py
