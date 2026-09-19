@@ -1,0 +1,75 @@
+{
+  "id": "security-logging",
+  "name": "Security Logging & Detection",
+  "version": "2.0.0",
+  "domain": "security",
+  "description": "Design and review security audit logging and detection: record who did what and when for auth events, data changes, and admin actions; never log passwords, tokens, or PII; keep logs tamper-evident; add a few high-value alerts such as failed-login thresholds. Use for audit trails, log redaction, monitoring, or incident investigation.",
+  "triggers": [
+    "audit log",
+    "audit logs",
+    "audit logging",
+    "audit trail",
+    "audit trails",
+    "logging",
+    "log entry",
+    "security monitoring",
+    "detection",
+    "detect",
+    "alert on",
+    "who did what",
+    "suspicious activity",
+    "failed logins",
+    "failed login attempts",
+    "anomaly",
+    "anomalies",
+    "siem",
+    "log redaction",
+    "redact",
+    "redaction",
+    "pii in logs",
+    "sensitive data in logs",
+    "forensics",
+    "incident investigation",
+    "tamper-evident",
+    "append-only",
+    "retention",
+    "log the",
+    "log every",
+    "log all",
+    "logged"
+  ],
+  "negative_triggers": [
+    "logging out",
+    "logging in",
+    "logging anyone out"
+  ],
+  "risk_level": "medium",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "auth-hardening",
+    "devops-reliability"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "sensitive action produces an audit entry with the required fields, shown",
+    "a password or token is demonstrably absent from the resulting log line",
+    "threshold alert fires on the tested condition"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [
+    "references/patterns.md",
+    "references/privacy-and-retention.md"
+  ],
+  "status": "stable",
+  "responsibilities": [
+    "audit-logging-and-detection"
+  ],
+  "priority": 52,
+  "provenance": [
+    "janefskills 1.2.0 security-logging"
+  ]
+}

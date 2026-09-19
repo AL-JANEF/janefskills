@@ -1,0 +1,22 @@
+{
+  "comment": "Compatibility aliases: legacy invocation names from janefskills 1.x, Agent Engineering Stack 1.x, and LeanCode Engineer 0.1 resolve to JANEF Forge capabilities. Deprecated; see docs/migration-v2.md.",
+  "aliases": {
+    "janef": "forge",
+    "engineering-router": "forge",
+    "lean-code-engineer": "forge",
+    "engineering-standard": "implementation-quality",
+    "security-engineering": "vuln-audit",
+    "architecture": "architecture-integrity",
+    "debugging": "root-cause-debugging",
+    "verification": "testing-verification",
+    "agent-orchestration": "delegation-discipline",
+    "backend": "api-contracts",
+    "database": "database-integrity",
+    "devops": "devops-reliability",
+    "cloud": "devops-reliability",
+    "frontend": "frontend-design-quality",
+    "performance": "performance-scalability",
+    "testing": "testing-verification",
+    "security": "security-audit"
+  }
+}

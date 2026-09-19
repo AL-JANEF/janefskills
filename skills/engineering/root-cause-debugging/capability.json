@@ -1,0 +1,76 @@
+{
+  "id": "root-cause-debugging",
+  "name": "Root-Cause Debugging",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Diagnose regressions, flaky behavior, crashes, build errors, and unclear failures with an evidence loop: reproduce, bound, hypothesize, observe, fix the cause at the narrowest correct boundary, then add a regression test. Use for any bug report or failure before patching a symptom.",
+  "triggers": [
+    "bug",
+    "bugs",
+    "debug",
+    "debugging",
+    "flaky",
+    "failure",
+    "failing",
+    "fails",
+    "failed",
+    "crash",
+    "crashes",
+    "crashing",
+    "error",
+    "errors",
+    "exception",
+    "stack trace",
+    "traceback",
+    "broken",
+    "not working",
+    "does not work",
+    "doesn't work",
+    "intermittent",
+    "timeout",
+    "timeouts",
+    "hang",
+    "hangs",
+    "hanging",
+    "500s",
+    "reproduce",
+    "root cause",
+    "build error",
+    "build failure",
+    "build fails",
+    "compile error",
+    "type error",
+    "why does",
+    "why is",
+    "investigate",
+    "times out"
+  ],
+  "negative_triggers": [],
+  "risk_level": "medium",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "testing-verification",
+    "implementation-quality"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "minimal reproduction recorded before the fix",
+    "regression test that fails on the original mechanism and passes after",
+    "nearby tests across the affected boundary"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "failure-diagnosis",
+    "regression-reproduction"
+  ],
+  "priority": 65,
+  "provenance": [
+    "lean-code-engineer 0.1.0 references/debugging.md"
+  ]
+}

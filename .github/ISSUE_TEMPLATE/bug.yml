@@ -8,14 +8,32 @@ body:
     attributes:
       label: Affected skill
       options:
-        - janef
-        - engineering-standard
-        - threat-model
+        - forge
+        - accessibility-quality
+        - api-contracts
+        - architecture-integrity
+        - context-efficiency
+        - database-integrity
+        - delegation-discipline
+        - devops-reliability
+        - documentation-integrity
+        - frontend-design-quality
+        - git-discipline
+        - implementation-quality
+        - performance-scalability
+        - review-defect-first
+        - root-cause-debugging
+        - testing-verification
+        - ui-ux-quality
         - auth-hardening
-        - vuln-audit
-        - variant-hunt
         - secrets-guard
+        - security-audit
         - security-logging
+        - skill-security-audit
+        - threat-model
+        - variant-hunt
+        - vuln-audit
+        - Routing or profiles
         - Packaging or installer
     validations:
       required: true

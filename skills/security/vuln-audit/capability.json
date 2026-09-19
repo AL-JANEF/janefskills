@@ -1,0 +1,93 @@
+{
+  "id": "vuln-audit",
+  "name": "Vulnerability Audit (OWASP)",
+  "version": "2.0.0",
+  "domain": "security",
+  "description": "Audit application code for the OWASP Top 10 classes: injection (SQL/NoSQL/command), XSS, CSRF, SSRF, IDOR and broken access control, insecure deserialization, unsafe file upload, and misconfiguration. Use for any security review, \"is this safe?\", or code that handles untrusted input, queries, uploads, outbound URLs, or objects by ID. Produces a severity-ranked report with concrete fixes and proof. Defensive only.",
+  "triggers": [
+    "vulnerability",
+    "vulnerabilities",
+    "vulnerable",
+    "owasp",
+    "injection",
+    "sql injection",
+    "nosql injection",
+    "command injection",
+    "xss",
+    "cross-site scripting",
+    "csrf",
+    "ssrf",
+    "idor",
+    "access control",
+    "broken access control",
+    "file upload",
+    "upload",
+    "uploads",
+    "deserialization",
+    "untrusted input",
+    "user input",
+    "user-supplied",
+    "sanitize",
+    "sanitization",
+    "sanitizer",
+    "escape output",
+    "security review",
+    "security issues",
+    "security bug",
+    "security bugs",
+    "is this safe",
+    "is it safe",
+    "safe to ship",
+    "exploitable",
+    "path traversal",
+    "directory traversal",
+    "input validation",
+    "open redirect",
+    "cors",
+    "security headers",
+    "insecure",
+    "harden this",
+    "secure this",
+    "security-sensitive",
+    "tenant isolation",
+    "cross-tenant",
+    "tenant",
+    "tenants",
+    "across tenants"
+  ],
+  "negative_triggers": [
+    "tenants table"
+  ],
+  "risk_level": "high",
+  "context_cost": "medium",
+  "requires": [],
+  "optional_with": [
+    "variant-hunt",
+    "auth-hardening",
+    "secrets-guard"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "each fix demonstrated: the malicious input or cross-object request is now rejected",
+    "findings ranked by severity with concrete impact and remediation; no working exploits"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [
+    "references/owasp-map.md",
+    "references/remediation.md"
+  ],
+  "status": "stable",
+  "responsibilities": [
+    "owasp-class-detection-and-remediation",
+    "untrusted-input-handling"
+  ],
+  "priority": 68,
+  "provenance": [
+    "janefskills 1.2.0 vuln-audit",
+    "agent-engineering-stack 1.1.0 security-engineering",
+    "lean-code-engineer 0.1.0 references/security.md (common hazards)"
+  ]
+}

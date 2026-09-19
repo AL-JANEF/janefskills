@@ -1,0 +1,67 @@
+{
+  "id": "implementation-quality",
+  "name": "Implementation Quality",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Write or modify production code to a strict, evidence-gated standard: features, bug fixes, refactors, services, libraries, CLIs, workers, and application logic. Use whenever real application code is being implemented or changed, or when asked whether code is production-ready. Bans placeholders, dead code, silent failures, and unverified completion claims.",
+  "triggers": [
+    "write code",
+    "refactor",
+    "refactoring",
+    "helper",
+    "utility",
+    "library",
+    "business logic",
+    "production code",
+    "production-ready",
+    "production ready",
+    "code change",
+    "rename",
+    "cleanup",
+    "clean up",
+    "dead code",
+    "placeholder",
+    "stub",
+    "todo",
+    "fixme",
+    "clean this up",
+    "tidy",
+    "simplify",
+    "deduplicate",
+    "extract a helper",
+    "small change",
+    "quick change",
+    "production-grade"
+  ],
+  "negative_triggers": [],
+  "risk_level": "medium",
+  "context_cost": "medium",
+  "requires": [],
+  "optional_with": [
+    "testing-verification",
+    "root-cause-debugging"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "focused test for the changed behavior",
+    "repository gates the change can affect (lint, type check, build)",
+    "final diff inspected; no placeholders, stubs, or disabled checks"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "production-code-implementation",
+    "forbidden-patterns",
+    "refactoring-discipline"
+  ],
+  "priority": 60,
+  "provenance": [
+    "janefskills 1.2.0 engineering-standard (truth policy, forbidden list, workflow)",
+    "agent-engineering-stack 1.1.0 implementation-quality",
+    "lean-code-engineer 0.1.0 references/engineering.md"
+  ]
+}

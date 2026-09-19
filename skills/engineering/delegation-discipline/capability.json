@@ -1,0 +1,62 @@
+{
+  "id": "delegation-discipline",
+  "name": "Delegation Discipline",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Decide whether subagents, parallel agents, or agent teams are justified and, if so, delegate safely: one agent unless work is bounded, independent, and clearly owned; explicit outcome, ownership, constraints, and return format per worker; the integrating agent owns final correctness, security review, and verification. Use whenever delegation or parallel execution is being considered.",
+  "triggers": [
+    "subagent",
+    "subagents",
+    "sub-agent",
+    "sub-agents",
+    "delegate",
+    "delegation",
+    "delegating",
+    "parallel agents",
+    "parallelize",
+    "parallelise",
+    "agent team",
+    "agent teams",
+    "multi-agent",
+    "multi agent",
+    "spawn agents",
+    "spawn an agent",
+    "split the work",
+    "fan out",
+    "fan-out",
+    "orchestrate agents",
+    "worktree",
+    "worktrees",
+    "swarm",
+    "background agent",
+    "background agents",
+    "in parallel",
+    "concurrently investigate"
+  ],
+  "negative_triggers": [],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "context-efficiency"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "integrating agent re-verifies delegated results before completion",
+    "no overlapping writes; every delegated result collected before the turn ends"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "delegation-gate",
+    "parallel-work-contract"
+  ],
+  "priority": 44,
+  "provenance": [
+    "lean-code-engineer 0.1.0 references/agent-orchestration.md"
+  ]
+}

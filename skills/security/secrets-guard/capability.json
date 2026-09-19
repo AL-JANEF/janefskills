@@ -1,0 +1,81 @@
+{
+  "id": "secrets-guard",
+  "name": "Secrets Guard",
+  "version": "2.0.0",
+  "domain": "security",
+  "description": "Keep secrets out of code, git history, logs, and client bundles: detect hardcoded API keys, credentials, tokens, and connection strings; move them to the environment or a secret manager; catch client-exposed prefixes; set up gitignore and pre-commit scanning; run the rotate-first response when a secret has leaked. Use for any credential, .env, or \"where do I put my key?\" question.",
+  "triggers": [
+    "secret",
+    "secrets",
+    "api key",
+    "api keys",
+    "apikey",
+    "credential",
+    "credentials",
+    ".env",
+    "env file",
+    "dotenv",
+    "environment variable",
+    "environment variables",
+    "env var",
+    "env vars",
+    "hardcoded",
+    "hard-coded",
+    "leaked",
+    "leak",
+    "leaking",
+    "private key",
+    "connection string",
+    "database url",
+    "gitleaks",
+    "next_public",
+    "client bundle",
+    "rotate",
+    "rotation",
+    "vault",
+    "secret manager",
+    "secrets manager",
+    "service account key",
+    "access key",
+    "committed a key",
+    "committed the key",
+    "where do i put",
+    "signing secret",
+    "webhook secret"
+  ],
+  "negative_triggers": [
+    "token rotation",
+    "refresh token",
+    "on-call rotation",
+    "on call rotation"
+  ],
+  "risk_level": "high",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "security-logging",
+    "devops-reliability"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "secret absent from the built client bundle and from git history, shown",
+    "pre-commit or CI secret scanner blocks a test secret",
+    "rotated credential confirmed revoked at the provider"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [
+    "references/leak-response.md",
+    "references/setup.md"
+  ],
+  "status": "stable",
+  "responsibilities": [
+    "secret-hygiene-and-leak-response"
+  ],
+  "priority": 66,
+  "provenance": [
+    "janefskills 1.2.0 secrets-guard"
+  ]
+}

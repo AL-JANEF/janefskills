@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AL-JANEF/janefskills/schemas/budgets.schema.json",
+  "title": "JANEF Forge context budgets",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["method", "core_contract_max_tokens", "entry_skill_max_tokens", "always_loaded_metadata_max_tokens", "skill_body_max_tokens", "profile_selected_max_tokens", "minimum_median_route_savings", "routing_eval_thresholds"],
+  "properties": {
+    "method": {"type": "string"},
+    "core_contract_max_tokens": {"type": "integer", "minimum": 100},
+    "entry_skill_max_tokens": {"type": "integer", "minimum": 100},
+    "always_loaded_metadata_max_tokens": {"type": "integer", "minimum": 100},
+    "skill_body_max_tokens": {"type": "integer", "minimum": 100},
+    "profile_selected_max_tokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lean", "standard", "high-assurance"],
+      "properties": {
+        "lean": {"type": "integer", "minimum": 100},
+        "standard": {"type": "integer", "minimum": 100},
+        "high-assurance": {"type": "integer", "minimum": 100}
+      }
+    },
+    "minimum_median_route_savings": {"type": "number", "minimum": 0, "maximum": 1},
+    "routing_eval_thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min_exact_match_rate", "max_false_positive_rate", "max_false_negative_rate", "min_risk_accuracy", "min_negative_case_accuracy"],
+      "properties": {
+        "min_exact_match_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "max_false_positive_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "max_false_negative_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "min_risk_accuracy": {"type": "number", "minimum": 0, "maximum": 1},
+        "min_negative_case_accuracy": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
+  }
+}

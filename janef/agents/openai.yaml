@@ -1,5 +1,0 @@
-interface:
-  display_name: "janef Security Orchestrator"
-  short_description: "Orchestrated defensive security audit and routing"
-  brand_color: "#D4AF61"
-  default_prompt: "Use $janef to run an evidence-backed security pass on this project."

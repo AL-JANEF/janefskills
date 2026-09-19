@@ -1,0 +1,81 @@
+{
+  "id": "performance-scalability",
+  "name": "Performance & Scalability",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Measure first, then fix latency, throughput, memory, CPU, bundle size, query count, contention, and scaling problems with before/after evidence under the same workload. Use for anything slow, expensive, or expected to scale; never optimize from intuition or trade correctness for speed silently.",
+  "triggers": [
+    "performance",
+    "performant",
+    "slow",
+    "slowness",
+    "latency",
+    "throughput",
+    "memory",
+    "memory leak",
+    "cpu",
+    "bundle size",
+    "profile",
+    "profiling",
+    "profiler",
+    "benchmark",
+    "benchmarks",
+    "optimize",
+    "optimise",
+    "optimization",
+    "optimisation",
+    "p95",
+    "p99",
+    "tail latency",
+    "load test",
+    "load testing",
+    "scalability",
+    "scale",
+    "scaling",
+    "hot path",
+    "lock contention",
+    "high traffic",
+    "requests per second",
+    "rps",
+    "cold start",
+    "render performance",
+    "re-render",
+    "re-renders",
+    "lighthouse",
+    "core web vitals",
+    "caching strategy",
+    "cache invalidation",
+    "faster",
+    "speed up",
+    "too slow",
+    "under load"
+  ],
+  "negative_triggers": [],
+  "risk_level": "medium",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "database-integrity",
+    "testing-verification"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "before/after measurement under the same workload with variance",
+    "correctness and adjacent-workload regression checked after the change"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "performance-measurement",
+    "scalability-analysis"
+  ],
+  "priority": 55,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 performance-scalability",
+    "lean-code-engineer 0.1.0 modules/performance"
+  ]
+}

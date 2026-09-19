@@ -1,0 +1,7 @@
+{
+  "comment": "Rendered into agents/openai.yaml for each capability when installing for Codex. Skill content stays host-agnostic.",
+  "brand_color": "#D4AF61",
+  "display_name_template": "Forge: {name}",
+  "default_prompt_template": "Use ${id} for this task and report evidence before claiming completion.",
+  "short_description_max": 64
+}

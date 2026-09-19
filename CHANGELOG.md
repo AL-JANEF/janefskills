@@ -1,8 +1,61 @@
 # Changelog
 
-All notable changes to janefskills are documented here. The format follows
-[Keep a Changelog](https://keepachangelog.com/), and the project aims to follow
+All notable changes are documented here. The format follows
+[Keep a Changelog](https://keepachangelog.com/) and the project follows
 [Semantic Versioning](https://semver.org/).
+
+## [2.0.0] — Unreleased (prepared 2026-09-19, not tagged or published)
+
+JANEF Forge: consolidation of janefskills 1.2.0, Agent Engineering Stack 1.1.0, and
+LeanCode Engineer 0.1.0 into one engineering-discipline system. See
+`docs/migration-v2.md` and `docs/architecture/CONVERGENCE_MATRIX.md`.
+
+### Added
+- Canonical engineering contract (`core/protocol/contract.md`) rendered into the
+  `forge` entry skill and host policy fragments with drift detection.
+- Machine-readable capability manifests (`capability.json`) validated by a stable
+  JSON Schema and a dependency-free registry with graph integrity checks
+  (duplicates, broken or cyclic dependencies, asymmetric conflicts, duplicate
+  ownership, duplicate triggers, alias collisions).
+- Deterministic router (`forge find` / `forge explain`) with applicability gate,
+  weighted phrase triggers, negative triggers, risk estimation, profile escalation,
+  and an explanation trace.
+- Explicit composition model: profile caps, transitive `requires`, risk-based
+  auto-includes, conflict rejection.
+- Profiles `lean`, `standard`, `high-assurance` as validated data plus guidance.
+- Risk-based verification model (low/medium/high/critical) shared by router, profiles,
+  and `testing-verification`.
+- Estimated structural context accounting (`forge context`) and a benchmark with
+  CI regression gates.
+- New capabilities: `forge`, `root-cause-debugging`, `delegation-discipline`,
+  `security-audit`, `skill-security-audit`; merged engineering capabilities from
+  Agent Engineering Stack and LeanCode Engineer modules.
+- Routing evaluation corpus (115 cases across eight categories) with thresholds.
+- Installer rewrite: managed-file markers with SHA-256, `--upgrade`, `uninstall`,
+  `doctor`, `policy` merge for CLAUDE.md/AGENTS.md, Codex metadata rendering,
+  symlink and unsafe-destination refusal.
+- Static external-skill triage (`scripts/audit_skill.py`) with a reasoned allowlist.
+- One canonical quality gate (`scripts/quality_gate.py`), reproducible release
+  packaging with SHA-256 sums and a release-evidence record.
+- Architecture, convergence, compatibility, migration, and release documentation.
+
+### Changed
+- Skills moved from the repository root to `skills/core`, `skills/engineering`,
+  `skills/security`, `skills/compat`. Plugin name and marketplace remain `janefskills`.
+- `janef` is now a deprecated alias for `forge`; `/janef full security pass` maps to
+  `security-audit`.
+- `engineering-standard` split into the contract, `implementation-quality`,
+  `testing-verification`, and `review-defect-first`; kept as an alias.
+- Codex `agents/openai.yaml` is generated at install time instead of stored per skill.
+- CI consolidated into one workflow running the quality gate on Python 3.10/3.13.
+
+### Removed
+- `config/skills.json`, shell wrappers (`install.sh`, `test.sh`, `validate.sh`),
+  `PUBLISHING.md`, and the old `docs/architecture.md` and `docs/compatibility.md`
+  (replaced by the documents above).
+
+### Deprecated
+- `/janef` alias skill and all names in `config/aliases.json`; removal planned for 3.0.
 
 ## [1.2.0] — 2026-08-24
 
@@ -29,34 +82,11 @@ All notable changes to janefskills are documented here. The format follows
 
 ### Added
 - **`variant-hunt`** — after any finding, sweeps the whole codebase for every
-  other instance of the same pattern (ripgrep + custom Semgrep rules), so the class
-  is eradicated, not just the reported case.
-- **`janef` upgraded to an audit-grade orchestrator** — now combines real
-  automated tooling (Semgrep SAST, Gitleaks, dependency audit) with LLM expert
-  review, professional audit methodology (variant analysis, fix verification,
-  constant-time/timing review), and an honest coverage verdict. Also serves as the
-  suite's technical reference index.
+  other instance of the same pattern (ripgrep + custom Semgrep rules).
+- **`janef` upgraded to an audit-grade orchestrator** combining real automated
+  tooling with expert review, audit methodology, and an honest coverage verdict.
 
 ## [1.0.0] — 2026
 
-Initial public release.
-
-### Added
-- **`janef`** — single entry point / router for the whole suite; `/janef <task>`
-  routes to the right specialist or runs a coordinated full security pass.
-- **`engineering-standard`** — strict production-grade engineering bar: truth
-  policy, forbidden-patterns list, red-team review, and a lint/typecheck/test/
-  build completion gate requiring evidence.
-- **`threat-model`** — STRIDE threat-modeling pass for the design stage, with a
-  worked multi-tenant example.
-- **`auth-hardening`** — authentication and session hardening: login, logout,
-  password storage, tokens, and brute-force protection, with copyable session
-  patterns.
-- **`vuln-audit`** — OWASP Top 10 code audit (injection, XSS, CSRF, SSRF, IDOR,
-  unsafe upload, misconfiguration) with before/after remediations.
-- **`secrets-guard`** — secrets hygiene across code, git history, logs, and client
-  bundles, with prevention setup and leak-response procedure.
-- **`security-logging`** — audit logging and suspicious-activity detection without
-  leaking sensitive data, with copyable patterns.
-- Repository scaffolding: README, LICENSE (MIT), CONTRIBUTING, SECURITY,
-  banner, and per-skill `references/`.
+Initial public release: `janef`, `engineering-standard`, `threat-model`,
+`auth-hardening`, `vuln-audit`, `secrets-guard`, `security-logging`.

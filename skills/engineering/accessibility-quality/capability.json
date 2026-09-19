@@ -1,0 +1,65 @@
+{
+  "id": "accessibility-quality",
+  "name": "Accessibility Quality",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Ship UI that works with keyboard and assistive technology: semantic HTML and native controls first, ARIA only to supplement, logical focus order with visible focus and escape paths, programmatic labels and error association, contrast and non-color meaning, alt text, reduced motion, zoom and reflow. Use for any user-facing UI change and for WCAG audits; never knowingly ship an accessibility regression.",
+  "triggers": [
+    "accessibility",
+    "accessible",
+    "a11y",
+    "wcag",
+    "screen reader",
+    "screen readers",
+    "keyboard navigation",
+    "keyboard",
+    "keyboard accessible",
+    "focus",
+    "focus order",
+    "focus trap",
+    "aria",
+    "aria-label",
+    "contrast",
+    "color contrast",
+    "alt text",
+    "reduced motion",
+    "assistive",
+    "assistive technology",
+    "tab order",
+    "skip link",
+    "landmark",
+    "landmarks",
+    "semantic html",
+    "voiceover",
+    "nvda",
+    "axe"
+  ],
+  "negative_triggers": [],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "frontend-design-quality",
+    "ui-ux-quality"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "keyboard-only pass of the changed surface",
+    "names, roles, states, and contrast checked for changed controls"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "assistive-technology-support",
+    "inclusive-interaction"
+  ],
+  "priority": 51,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 accessibility-quality",
+    "lean-code-engineer 0.1.0 modules/frontend (accessibility rules)"
+  ]
+}

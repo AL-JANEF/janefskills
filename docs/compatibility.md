@@ -1,35 +1,21 @@
 # Compatibility
 
-| Host | Status | Installation | Notes |
+| Host | Status | Install path | Verified how |
 |---|---|---|---|
-| Claude Code | Primary | Marketplace, `--plugin-dir`, or personal installer | Plugin namespace is `janefskills` |
-| Codex | Supported metadata | Personal installer | Each skill includes `agents/openai.yaml`; newly installed skills load on the next task |
-| Other Agent Skills hosts | Portable structure | Copy selected skill directories | Confirm the host's frontmatter and invocation behavior |
+| Claude Code 2.1.278 | **Primary** | Marketplace (`/plugin marketplace add AL-JANEF/janefskills`, `/plugin install janefskills@janefskills`), `claude --plugin-dir .`, or `python3 scripts/install.py install --target claude` | `claude plugin validate .` passes on the release commit (run in the quality gate when the CLI is present); installer tests cover managed install, upgrade, uninstall, doctor, policy merge |
+| Codex | **Structure verified; behavior not yet observed** | `python3 scripts/install.py install --target codex` renders `agents/openai.yaml` per skill from `adapters/codex/interface.json` | Installer tests assert the rendered metadata and the `$CODEX_HOME/skills/<id>/SKILL.md` layout. No interactive Codex session has been recorded yet; parity is not claimed until a smoke run is added to this table |
+| Cursor, OpenCode, Gemini CLI, other Agent Skills hosts | **Not supported** | Copy skill directories manually at your own risk | Nothing verified. Adapters can be added without changing skill content (see architecture § Host adapters) |
 
-## Claude Code
+"Primary" means packaging, installer, and automated validation exist and are exercised in CI. "Structure verified" means the files Forge writes match the host's documented layout, nothing more.
 
-The repository follows Claude Code's plugin layout without relocating legacy
-skill paths. `.claude-plugin/plugin.json` lists every root skill explicitly, and
-`.claude-plugin/marketplace.json` lets the GitHub repository act as a one-plugin
-marketplace.
+## Python
 
-Validate the package with:
+Tooling is standard-library only. Supported: Python 3.10 – 3.14 (CI runs 3.10 and 3.13 on Ubuntu, 3.13 on macOS and Windows).
 
-```bash
-claude plugin validate .
-```
+## Optional external tools
 
-## Codex
+Referenced, never bundled or installed by Forge: Semgrep, Gitleaks, pip-audit / npm audit / cargo audit, CodeQL, NVIDIA SkillSpector (Apache-2.0; install from the upstream repository), actionlint, shellcheck. When a tool is absent, every Forge skill instructs the agent to report the layer as **NOT RUN** rather than imply coverage.
 
-Codex-specific UI metadata is intentionally kept inside each skill. It does not
-change Claude Code behavior. Install all skills with:
+## Compatibility aliases
 
-```bash
-python3 scripts/install.py --target codex
-```
-
-## Compatibility policy
-
-Primary support means packaging and automated validation are present. Portable
-means the folder structure is expected to work, but the project does not claim
-behavioral parity without a host-specific test.
+Legacy names resolve via `config/aliases.json` in the installer (`--only`), `forge check`, and `forge context --skills`. `/janef` remains available as a deprecated alias skill. See `docs/migration-v2.md`.

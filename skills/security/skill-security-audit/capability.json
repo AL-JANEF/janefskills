@@ -1,0 +1,70 @@
+{
+  "id": "skill-security-audit",
+  "name": "External Skill Security Audit",
+  "version": "2.0.0",
+  "domain": "security",
+  "description": "Gate before adopting any external agent skill, plugin, hook, script, installer, or MCP package: provenance and license review, deterministic static triage (scripts/audit_skill.py), optional NVIDIA SkillSpector scan, and manual review for prompt injection, credential access, exfiltration, and destructive commands. Fails closed on unresolved HIGH/CRITICAL findings or incomplete scans; scanning is a control, not proof of safety.",
+  "triggers": [
+    "external skill",
+    "third-party skill",
+    "third party skill",
+    "install a skill",
+    "install this skill",
+    "install the skill",
+    "plugin install",
+    "install plugin",
+    "install the plugin",
+    "install this plugin",
+    "mcp server",
+    "mcp package",
+    "mcp servers",
+    "untrusted skill",
+    "skillspector",
+    "prompt injection",
+    "hook",
+    "hooks",
+    "adopt this skill",
+    "marketplace",
+    "new plugin",
+    "is this skill safe",
+    "is this plugin safe",
+    "skill from github",
+    "agent skill",
+    "skills repo",
+    "vendor a skill",
+    "claude plugin",
+    "codex plugin",
+    "extension",
+    "ignore all previous instructions",
+    "ignore previous instructions",
+    "previous instructions",
+    "system prompt"
+  ],
+  "negative_triggers": [],
+  "risk_level": "high",
+  "context_cost": "medium",
+  "requires": [],
+  "optional_with": [
+    "secrets-guard"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "scanner or static triage output attached, or explicitly NOT RUN with the candidate treated as not approved",
+    "provenance (source, version or commit, license) recorded",
+    "no HIGH or CRITICAL finding left unresolved before adoption"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "external-skill-gating",
+    "supply-chain-review-for-agent-content"
+  ],
+  "priority": 64,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 skill-security-audit and scripts/audit-skill.py"
+  ]
+}

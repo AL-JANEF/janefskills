@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AL-JANEF/janefskills/schemas/profile.schema.json",
+  "title": "JANEF Forge profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "description", "max_skills", "max_references", "verification_floor", "independent_review", "delegation", "auto_include", "auto_escalate"],
+  "properties": {
+    "id": {"type": "string", "enum": ["lean", "standard", "high-assurance"]},
+    "name": {"type": "string", "minLength": 3},
+    "description": {"type": "string", "minLength": 20},
+    "max_skills": {"type": "integer", "minimum": 1, "maximum": 8},
+    "max_references": {"type": "integer", "minimum": 0, "maximum": 6},
+    "verification_floor": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+    "independent_review": {"type": "string", "enum": ["never", "high-risk", "always"]},
+    "delegation": {"type": "string", "enum": ["single-agent", "selective"]},
+    "auto_include": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "low": {"type": "array", "items": {"type": "string"}},
+        "medium": {"type": "array", "items": {"type": "string"}},
+        "high": {"type": "array", "items": {"type": "string"}},
+        "critical": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "auto_escalate": {"type": "boolean"}
+  }
+}

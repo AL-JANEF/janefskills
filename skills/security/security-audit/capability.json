@@ -1,0 +1,78 @@
+{
+  "id": "security-audit",
+  "name": "Security Audit (multi-layer pass)",
+  "version": "2.0.0",
+  "domain": "security",
+  "description": "Audit-grade multi-layer security pass: Semgrep SAST, Gitleaks secret scanning, and dependency audit as deterministic ground truth, then specialist review, variant analysis, fix verification, timing review, and an honest coverage verdict naming what was and was not covered. Use for \"full security pass\", security audit, pre-launch review, or any serious security assessment. Defensive only.",
+  "triggers": [
+    "security pass",
+    "full security pass",
+    "security audit",
+    "audit the codebase",
+    "audit this codebase",
+    "audit the repo",
+    "security assessment",
+    "pentest",
+    "penetration test",
+    "pen test",
+    "semgrep",
+    "sast",
+    "dependency audit",
+    "npm audit",
+    "pip-audit",
+    "cargo audit",
+    "scan the repo",
+    "security scan",
+    "comprehensive security",
+    "how secure",
+    "security posture",
+    "full audit",
+    "pre-launch",
+    "before launch",
+    "before we ship",
+    "go-live",
+    "production launch",
+    "compliance review",
+    "soc2",
+    "iso 27001",
+    "audit the code",
+    "audit this",
+    "full pass"
+  ],
+  "negative_triggers": [],
+  "risk_level": "high",
+  "context_cost": "large",
+  "requires": [
+    "vuln-audit",
+    "variant-hunt"
+  ],
+  "optional_with": [
+    "threat-model",
+    "auth-hardening",
+    "secrets-guard",
+    "security-logging"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "every automated layer reported as ran (with counts) or NOT RUN (with install command)",
+    "every scanner finding confirmed or dismissed with justification",
+    "coverage verdict states structural gaps explicitly"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [
+    "references/audit-methodology.md",
+    "references/orchestration.md"
+  ],
+  "status": "stable",
+  "responsibilities": [
+    "multi-layer-security-orchestration",
+    "coverage-verdict"
+  ],
+  "priority": 72,
+  "provenance": [
+    "janefskills 1.2.0 janef (full security pass)"
+  ]
+}

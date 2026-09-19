@@ -1,79 +1,34 @@
-# Contributing to janefskills
+# Contributing to JANEF Forge
 
-Thanks for your interest in improving these skills. Contributions that make them
-sharper, clearer, or more correct are very welcome.
+Thanks for helping make coding agents more disciplined. Please read this before opening a pull request.
 
-## The one hard rule: defensive only
+## Ground rules
 
-These are **defensive** security skills. Every contribution must keep them that
-way. We will not accept anything that:
+- **Defensive only.** Security capabilities harden, audit, and verify. Anything that facilitates unauthorized access, exfiltration, or attack is rejected.
+- **One contract.** Shared invariants live in `core/protocol/contract.md` only. Do not restate them inside skills; link to the capability that owns the detail instead.
+- **Evidence.** A PR that changes behavior includes the command you ran and its result.
 
-- provides working exploit code, attack payloads, or bypass techniques;
-- facilitates unauthorized access, privilege escalation, or data exfiltration;
-- weakens a control rather than strengthening it;
-- teaches how to attack a system rather than how to defend or verify one.
+## Adding or changing a capability
 
-Describing an *impact* to justify a fix ("an attacker could read other users'
-records, so scope the query") is fine and expected. Handing over a runnable
-attack is not. When in doubt, err toward defense.
+1. Create or edit `skills/<domain>/<id>/SKILL.md` and `capability.json`. The frontmatter `name` must equal the directory name and the `description` must equal the manifest description verbatim.
+2. Declare unique `triggers` and `responsibilities`; the registry rejects duplicates across capabilities. Use `negative_triggers` to prevent known false activations.
+3. Declare `requires` only for hard dependencies that must always load together. Use `optional_with` for advisory relationships. Conflicts must be declared on both sides.
+4. Put deep, copyable detail in `references/` and list each file in the manifest and in the body.
+5. Add at least one case to `evals/routing_corpus.json` that exercises the new or changed trigger, including a negative or adversarial case when relevant.
+6. Run `python3 scripts/quality_gate.py`. It must pass; if a budget in `config/budgets.json` needs to change, say why in the PR.
 
-## What makes a good contribution
+## Changing the contract, a profile, or routing rules
 
-- **Correctness fixes.** If a pattern, code sample, or claim is wrong or outdated,
-  fix it and say why.
-- **Clarity.** Tighter wording, better structure, clearer examples.
-- **Coverage gaps.** A missing case within an existing skill's scope (e.g. another
-  common injection sink in `vuln-audit`).
-- **New skills.** A genuinely new defensive skill that fits the suite. Open an
-  issue to discuss scope first — skills should be focused, not sprawling.
+These are architecture changes. Update `docs/architecture/JANEF_FORGE_ARCHITECTURE.md`, run `python3 scripts/forge.py sync` after editing the contract, and expect a request for a second reviewer.
 
-## Skill quality standards
+## Tooling
 
-If you add or edit a skill, keep it to the same bar as the rest:
+Standard library only. A new dependency needs a measured benefit, an owner, and an update policy; open an issue first.
 
-- **Valid frontmatter.** `name`, a precise `description` that states *when* the
-  skill should trigger (written in the third person), and `license`.
-- **Focused scope.** One skill, one job. If it's trying to do everything, split it.
-- **Under ~500 lines** in `SKILL.md`. Deeper material goes in `references/`,
-  loaded only when needed (progressive disclosure).
-- **Imperative, concrete instructions** — tell Claude what to do and how to verify,
-  not vague principles.
-- **A proof-before-done step.** Every skill must require evidence for its claims.
-- **A severity-ranked output format**, consistent with the others.
-- **Host metadata.** Keep `agents/openai.yaml` consistent with the skill name,
-  description, and intended prompt.
+## Commit and PR conventions
 
-## Local verification
+Conventional commit types (`feat`, `fix`, `refactor`, `docs`, `test`, `chore`, `ci`). Work on a branch; do not force-push shared branches. PR descriptions summarize the whole range, name the tests run, and list anything intentionally left out.
 
-Run the complete repository gate before opening a pull request:
+## Reporting a security concern
 
-```bash
-make check
-```
-
-When Claude Code is available, also validate the plugin package:
-
-```bash
-claude plugin validate .
-```
-
-The installer test uses temporary directories and never writes to your personal
-Claude Code or Codex configuration.
-
-## Submitting
-
-1. Fork the repo and create a branch (`fix/vuln-audit-nosql`, `skill/csp-header`).
-2. Make your change; keep commits focused with clear messages.
-3. Run the local verification gate and include the evidence.
-4. Open a pull request describing what changed and why. If it's a new skill or a
-   scope change, link the discussion issue.
-5. Confirm your change is defensive-only.
-
-## Reporting problems
-
-- **Bugs / inaccuracies in a skill:** open a GitHub issue.
-- **A security concern about the skills themselves:** see
-  [SECURITY.md](./SECURITY.md).
-
-By contributing, you agree your contributions are licensed under the repository's
-[MIT License](./LICENSE).
+See [SECURITY.md](./SECURITY.md). Do not open a public issue for a security concern.

@@ -3,10 +3,16 @@
 ## Scope
 
 This repository contains Markdown skills, illustrative code snippets, and small
-standard-library utilities for installation and repository validation. It ships
-no service, privileged daemon, dependency bundle, or remote execution component.
-The installer copies only selected skill directories and refuses to replace an
-existing installation unless the user explicitly chooses `--force`.
+standard-library utilities for installation, validation, routing, and packaging. It
+ships no service, privileged daemon, dependency bundle, or remote execution
+component. The installer copies only selected skill directories, refuses to replace
+an existing installation unless the user explicitly chooses `--force` or
+`--upgrade` (both back up the previous content), records what it owns, and removes
+only that on uninstall. `scripts/audit_skill.py` reads external skill text; it never
+executes candidate code, and its result is a control, not proof of safety.
+
+Threats considered and their controls are summarized in
+`docs/architecture/JANEF_FORGE_ARCHITECTURE.md` § "Security model".
 
 That said, the *content* still matters: a skill that gave wrong or dangerous
 guidance would be a real problem. This policy covers that.
@@ -18,8 +24,11 @@ guidance would be a real problem. This policy covers that.
 - Guidance that could be **misused offensively**, or that drifts from the
   defensive-only principle.
 - A factual error in a security claim that could lead someone to ship unsafe code.
-- Installer behavior that overwrites, escapes the requested destination, or fails
-  to preserve an existing skill as documented.
+- Installer behavior that overwrites, escapes the requested destination, follows a
+  symlink, or fails to preserve an existing skill as documented.
+- A routing or composition rule that would load a security capability less often than
+  the task warrants, or a profile that lowers a verification floor.
+- A static-triage pattern gap that lets a clearly malicious skill pass the gate.
 
 ## How to report
 

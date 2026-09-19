@@ -1,0 +1,79 @@
+{
+  "id": "architecture-integrity",
+  "name": "Architecture Integrity",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Design or change system structure without breaking invariants: module and domain boundaries, dependency direction, new services, queues, caches, datastores, or frameworks, and lasting trade-offs recorded as ADRs. Use when a change crosses components, introduces a durable boundary, or is hard to reverse.",
+  "triggers": [
+    "architecture",
+    "architectural",
+    "boundary",
+    "boundaries",
+    "module boundaries",
+    "dependency direction",
+    "adr",
+    "design decision",
+    "design the system",
+    "system design",
+    "high-level design",
+    "service split",
+    "microservice",
+    "microservices",
+    "monolith",
+    "modular monolith",
+    "event-driven",
+    "event driven",
+    "cqrs",
+    "domain model",
+    "ddd",
+    "hexagonal",
+    "clean architecture",
+    "layering",
+    "coupling",
+    "new service",
+    "introduce a queue",
+    "message queue",
+    "message bus",
+    "tech stack",
+    "framework choice",
+    "choose a framework",
+    "trade-off",
+    "tradeoff",
+    "trade-offs",
+    "long-term",
+    "extensible",
+    "plugin architecture"
+  ],
+  "negative_triggers": [
+    "architecture doc"
+  ],
+  "risk_level": "medium",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "documentation-integrity",
+    "database-integrity",
+    "api-contracts"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "architecture validated against implementation reality (imports, ownership, dependency direction)",
+    "material trade-off recorded in the repository ADR/design mechanism"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "system-structure",
+    "dependency-direction",
+    "architecture-decision-records"
+  ],
+  "priority": 55,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 architecture-integrity",
+    "lean-code-engineer 0.1.0 references/architecture.md"
+  ]
+}

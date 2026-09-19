@@ -1,0 +1,16 @@
+{
+  "id": "high-assurance",
+  "name": "High assurance",
+  "description": "For security-sensitive, auth, permissions, migrations, production-impacting, critical-data, infrastructure, or otherwise high-risk work. Deeper verification, independent review, and security gates without loading every skill.",
+  "max_skills": 5,
+  "max_references": 4,
+  "verification_floor": "high",
+  "independent_review": "always",
+  "delegation": "selective",
+  "auto_include": {
+    "low": ["testing-verification"],
+    "high": ["testing-verification", "review-defect-first"],
+    "critical": ["testing-verification", "review-defect-first", "variant-hunt"]
+  },
+  "auto_escalate": false
+}

@@ -1,0 +1,22 @@
+{
+  "id": "janef",
+  "name": "janef (deprecated alias)",
+  "version": "2.0.0",
+  "domain": "compat",
+  "description": "Deprecated compatibility alias for /janef from janefskills 1.x. Forwards to the forge entry point; /janef <task> behaves like /forge <task> and /janef full security pass behaves like /forge security pass. Do not use for new work.",
+  "triggers": [],
+  "negative_triggers": [],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [],
+  "conflicts_with": ["forge"],
+  "verification_requirements": ["same as forge"],
+  "supported_hosts": ["claude-code", "codex"],
+  "references": [],
+  "status": "deprecated",
+  "replaced_by": "forge",
+  "responsibilities": ["legacy-janef-invocation"],
+  "priority": 0,
+  "provenance": ["janefskills 1.2.0 janef"]
+}

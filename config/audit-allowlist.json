@@ -1,0 +1,11 @@
+{
+  "comment": "Reviewed, accepted static-triage findings for JANEF Forge's own skill content. Each entry names why the flagged text is intentional. Used only by the quality gate's self-scan; never for external candidates.",
+  "accepted": [
+    {"file": "security/vuln-audit/references/remediation.md", "kind": "dynamic-exec", "reason": "Deliberate vulnerable-vs-fixed example of command injection; the fixed form follows immediately."},
+    {"file": "security/vuln-audit/references/remediation.md", "kind": "network-command", "reason": "SSRF before/after example using fetch(); illustrates the allowlisted fix."},
+    {"file": "security/variant-hunt/references/hunt-patterns.md", "kind": "network-command", "reason": "Semgrep rule pattern that matches server-side fetch sinks; it is a detection rule, not a call."},
+    {"file": "security/security-audit/references/orchestration.md", "kind": "package-install-hook", "reason": "Documented install one-liners for optional scanners; the skill instructs the agent to report NOT RUN rather than install without authorization."},
+    {"file": "security/skill-security-audit/capability.json", "kind": "prompt-override", "reason": "Routing triggers that detect prompt-injection wording so the gate skill activates."},
+    {"file": "engineering/delegation-discipline/SKILL.md", "kind": "prompt-override", "reason": "Sentence forbids bypassing approvals; the regex matches the negated phrase."}
+  ]
+}
