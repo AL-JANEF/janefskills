@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Private security report
-    url: https://github.com/AL-JANEF/janefskills/security/advisories/new
+    url: https://github.com/AL-JANEF/janef-forge/security/advisories/new
     about: Report dangerous or security-sensitive guidance privately.
