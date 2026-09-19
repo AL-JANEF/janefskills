@@ -1,15 +1,12 @@
 ---
 name: vuln-audit
 description: >-
-  Audit web application code for common vulnerabilities — the OWASP Top 10 class
-  of bugs: injection (SQL/NoSQL/command), XSS, CSRF, SSRF, IDOR / broken access
-  control, insecure deserialization, unsafe file upload, and security
-  misconfiguration. Use this skill whenever the user asks to review code for
-  security, find vulnerabilities, do a security pass before shipping, or is
-  writing code that handles user input, database queries, file uploads, or
-  external requests — even if they only say "review this" or "is this safe?".
-  Defensive only: this skill finds and fixes weaknesses, it does not write
-  exploits.
+  Audit application code for the OWASP Top 10 classes: injection
+  (SQL/NoSQL/command), XSS, CSRF, SSRF, IDOR and broken access control,
+  insecure deserialization, unsafe file upload, and misconfiguration. Use for
+  any security review, "is this safe?", or code that handles untrusted input,
+  queries, uploads, outbound URLs, or objects by ID. Produces a
+  severity-ranked report with concrete fixes and proof. Defensive only.
 license: MIT
 ---
 

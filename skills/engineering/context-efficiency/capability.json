@@ -1,0 +1,56 @@
+{
+  "id": "context-efficiency",
+  "name": "Context Efficiency",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Tactics for large repositories, noisy tool output, long sessions, and token pressure: search before reading, read ranges not files, keep logs and generated output out of context, never reread unchanged files or rerun unchanged passing checks, prefer deterministic scripts. Use when context volume materially affects execution quality; never reduces necessary reasoning, security, or verification.",
+  "triggers": [
+    "large repo",
+    "large repository",
+    "large codebase",
+    "huge codebase",
+    "monorepo",
+    "noisy output",
+    "noisy logs",
+    "verbose logs",
+    "context window",
+    "token budget",
+    "too much output",
+    "context pressure",
+    "reduce context",
+    "save context",
+    "compact",
+    "summarize the logs",
+    "long session",
+    "running out of context",
+    "big diff",
+    "thousands of files",
+    "many files"
+  ],
+  "negative_triggers": [],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "delegation-discipline"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "no required check skipped in the name of efficiency; skipped checks named"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "context-budgeting",
+    "tool-output-hygiene"
+  ],
+  "priority": 42,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 context-efficiency",
+    "lean-code-engineer 0.1.0 references/context-efficiency.md"
+  ]
+}

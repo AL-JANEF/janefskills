@@ -1,13 +1,11 @@
 ---
 name: variant-hunt
 description: >-
-  After any vulnerability or bug is found, hunt the entire codebase for every
-  other instance of the same pattern — because one bug is almost never alone. Turns
-  a single finding into a systematic sweep using ripgrep and custom Semgrep rules,
-  so the whole class gets fixed, not just the reported case. Use this skill right
-  after finding or fixing a security issue, when reviewing whether a fix is
-  complete, or when a past incident's pattern must be proven eradicated. Defensive
-  only: it finds and eradicates weaknesses, it does not exploit them.
+  After any vulnerability or bug is confirmed, sweep the entire codebase for
+  every other instance of the same pattern with ripgrep and custom Semgrep
+  rules so the whole class is fixed, not one case. Use right after finding or
+  fixing a security issue, when checking a fix is complete, or to prove a past
+  pattern is eradicated. Defensive only.
 license: MIT
 ---
 
@@ -113,7 +111,7 @@ in the repo so the pattern can never silently return.
 ## Composes with the suite
 
 This skill is the natural follow-up to `vuln-audit` (which finds the first
-instance) and is invoked inside `/janef`'s full pass as its variant-analysis layer.
+instance) and is a required layer of the `security-audit` full pass.
 Whatever finds the bug, this is what makes sure it was the last one of its kind.
 
 ## References

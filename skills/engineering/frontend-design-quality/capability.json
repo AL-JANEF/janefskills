@@ -1,0 +1,83 @@
+{
+  "id": "frontend-design-quality",
+  "name": "Frontend Design Quality",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Implement visual frontend work with an intentional design direction: inspect the existing design system and tokens, design mobile and desktop deliberately, implement every state (loading, empty, error, disabled, overflow, permission-denied), protect hierarchy and layout stability, and verify rendered behavior. Always composes with accessibility-quality. Use for UI implementation, styling, layout, and component work.",
+  "triggers": [
+    "frontend",
+    "front-end",
+    "front end",
+    "ui",
+    "user interface",
+    "design system",
+    "design tokens",
+    "typography",
+    "spacing",
+    "layout",
+    "responsive",
+    "breakpoint",
+    "breakpoints",
+    "mobile layout",
+    "css",
+    "scss",
+    "tailwind",
+    "styling",
+    "styles",
+    "stylesheet",
+    "theme",
+    "theming",
+    "dark mode",
+    "animation",
+    "animations",
+    "motion",
+    "transition",
+    "visual",
+    "visual design",
+    "landing page",
+    "component library",
+    "react component",
+    "vue component",
+    "svelte component",
+    "page design",
+    "pixel",
+    "polish the ui",
+    "hero section",
+    "grid",
+    "flexbox",
+    "icon",
+    "icons"
+  ],
+  "negative_triggers": [],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [
+    "accessibility-quality"
+  ],
+  "optional_with": [
+    "ui-ux-quality",
+    "performance-scalability"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "rendered behavior checked at mobile and desktop breakpoints",
+    "loading, empty, error, and long-content states exercised",
+    "focus states and reduced-motion preference respected"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "visual-frontend-implementation",
+    "design-system-fidelity",
+    "ui-states"
+  ],
+  "priority": 52,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 frontend-design-quality",
+    "lean-code-engineer 0.1.0 modules/frontend"
+  ]
+}

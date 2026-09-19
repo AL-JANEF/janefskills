@@ -1,14 +1,11 @@
 ---
 name: auth-hardening
 description: >-
-  Review, harden, and design authentication and session management for web
-  applications — login, logout, session lifecycle, password storage, token
-  handling, and brute-force protection. Use this skill whenever the user is
-  building or reviewing sign-in / sign-out flows, JWT or session cookies,
-  password hashing, "remember me", refresh tokens, account lockout, OTP/MFA,
-  or password reset — even if they only mention "login" or "auth" casually.
-  Applies to Node.js, Next.js, and similar stacks. Defensive only: this skill
-  hardens auth systems, it does not bypass or attack them.
+  Review, harden, and design authentication and session management: login,
+  logout, session lifecycle, password storage, JWT and cookie handling,
+  refresh tokens, brute-force and enumeration resistance, MFA/OTP, password
+  reset, roles and permissions. Use whenever a task touches sign-in, sessions,
+  tokens, or authorization, even casually. Defensive only.
 license: MIT
 ---
 

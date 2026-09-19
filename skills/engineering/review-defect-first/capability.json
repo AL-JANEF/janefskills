@@ -1,0 +1,68 @@
+{
+  "id": "review-defect-first",
+  "name": "Defect-First Review",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Independent review of a diff, PR, or file that hunts concrete defects introduced by the change: correctness, security, data loss, authorization or tenant escape, production failure, broken contracts, performance regressions, missing critical tests. Severity-ordered findings citing a real code path; no style inflation; \"no qualifying defect\" is valid. Use for code review and as the independent gate at high risk.",
+  "triggers": [
+    "review",
+    "code review",
+    "review this",
+    "review the",
+    "review my",
+    "pr review",
+    "review pr",
+    "review the pr",
+    "review the diff",
+    "audit the diff",
+    "find defects",
+    "defects",
+    "critique",
+    "second opinion",
+    "look over",
+    "look at this",
+    "sanity check",
+    "is this correct",
+    "what is wrong with",
+    "anything wrong",
+    "feedback on",
+    "approve",
+    "lgtm",
+    "merge request",
+    "pull request review",
+    "reviewer",
+    "reviews"
+  ],
+  "negative_triggers": [
+    "security review",
+    "security pass",
+    "security bug",
+    "is this safe"
+  ],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "each finding confirmed from a real code path, call site, invariant, or test gap",
+    "residual risks and material verification gaps listed"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [
+    "references/review-checklist.md"
+  ],
+  "status": "stable",
+  "responsibilities": [
+    "independent-diff-review",
+    "finding-quality"
+  ],
+  "priority": 54,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 review-defect-first",
+    "janefskills 1.2.0 engineering-standard references/review-and-gate.md (review checklist)"
+  ]
+}

@@ -1,14 +1,12 @@
 ---
 name: threat-model
 description: >-
-  Run a structured threat-modeling pass at the design stage — before code — to
-  find security risks in an architecture or feature. Uses STRIDE (Spoofing,
-  Tampering, Repudiation, Information disclosure, Denial of service, Elevation
-  of privilege) to systematically ask "how could this be attacked?". Use this
-  skill whenever the user is designing a system, planning a new feature, drawing
-  an architecture, defining APIs, or asks "what could go wrong security-wise?"
-  — especially before implementation begins. Defensive only: it identifies risks
-  and mitigations, it does not plan attacks.
+  Structured STRIDE threat modeling at design time, before code exists: name
+  assets, actors, and trust boundaries, walk
+  Spoofing/Tampering/Repudiation/Information disclosure/Denial of
+  service/Elevation of privilege at each boundary, rate and prioritize, and
+  turn mitigations into build tasks. Use when designing a system, feature, or
+  API or asking what could go wrong. Defensive only.
 license: MIT
 ---
 

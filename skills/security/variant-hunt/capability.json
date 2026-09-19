@@ -1,0 +1,57 @@
+{
+  "id": "variant-hunt",
+  "name": "Variant Hunt",
+  "version": "2.0.0",
+  "domain": "security",
+  "description": "After any vulnerability or bug is confirmed, sweep the entire codebase for every other instance of the same pattern with ripgrep and custom Semgrep rules so the whole class is fixed, not one case. Use right after finding or fixing a security issue, when checking a fix is complete, or to prove a past pattern is eradicated. Defensive only.",
+  "triggers": [
+    "variant",
+    "variants",
+    "variant analysis",
+    "siblings",
+    "same pattern",
+    "other instances",
+    "everywhere else",
+    "elsewhere in the codebase",
+    "sweep",
+    "sweep the codebase",
+    "semgrep rule",
+    "eradicate",
+    "all occurrences",
+    "other places",
+    "same bug elsewhere",
+    "did we get all",
+    "find all instances",
+    "similar bugs",
+    "same mistake",
+    "pattern elsewhere",
+    "codeql"
+  ],
+  "negative_triggers": [],
+  "risk_level": "medium",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "vuln-audit"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "tools and patterns used are named so the sweep is reproducible",
+    "re-run of the rule returns zero matches after fixes, or every remaining instance is justified"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [
+    "references/hunt-patterns.md"
+  ],
+  "status": "stable",
+  "responsibilities": [
+    "pattern-eradication"
+  ],
+  "priority": 55,
+  "provenance": [
+    "janefskills 1.2.0 variant-hunt"
+  ]
+}

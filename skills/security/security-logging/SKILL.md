@@ -1,13 +1,11 @@
 ---
 name: security-logging
 description: >-
-  Design and review security audit logging and monitoring — recording who did
-  what and when, detecting suspicious activity (repeated failed logins, unusual
-  access), and doing it without leaking sensitive data into the logs themselves.
-  Use this skill whenever the user is building audit trails, adding logging to
-  sensitive actions, setting up monitoring or alerting, investigating an incident,
-  or asks "how do I track who did X?" — especially for auth events, data changes,
-  and admin actions. Defensive only.
+  Design and review security audit logging and detection: record who did what
+  and when for auth events, data changes, and admin actions; never log
+  passwords, tokens, or PII; keep logs tamper-evident; add a few high-value
+  alerts such as failed-login thresholds. Use for audit trails, log redaction,
+  monitoring, or incident investigation.
 license: MIT
 ---
 

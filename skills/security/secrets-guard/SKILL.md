@@ -1,14 +1,12 @@
 ---
 name: secrets-guard
 description: >-
-  Prevent secrets from leaking into code, git history, logs, or client bundles —
-  API keys, database credentials, tokens, private keys, and connection strings.
-  Detects hardcoded secrets, guides correct secret management (env vars, secret
-  managers), and sets up prevention (gitignore, pre-commit scanning). Use this
-  skill whenever the user is handling API keys or credentials, setting up
-  environment variables, connecting to external services, committing config, or
-  asks about keeping secrets safe — even a casual "where do I put my API key?".
-  Defensive only.
+  Keep secrets out of code, git history, logs, and client bundles: detect
+  hardcoded API keys, credentials, tokens, and connection strings; move them
+  to the environment or a secret manager; catch client-exposed prefixes; set
+  up gitignore and pre-commit scanning; run the rotate-first response when a
+  secret has leaked. Use for any credential, .env, or "where do I put my key?"
+  question.
 license: MIT
 ---
 

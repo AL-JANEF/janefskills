@@ -1,0 +1,81 @@
+{
+  "id": "testing-verification",
+  "name": "Testing & Verification",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Select tests by risk, design strong regression and boundary tests, handle flaky suites, and run the completion gate with evidence: exact command, result, scope, and every skipped or blocked check. Use when choosing what to test, judging whether work is done, or producing release evidence. Never weaken a failing test to get green.",
+  "triggers": [
+    "test",
+    "tests",
+    "testing",
+    "unit test",
+    "unit tests",
+    "integration test",
+    "integration tests",
+    "e2e",
+    "end-to-end",
+    "end to end",
+    "coverage",
+    "test coverage",
+    "test strategy",
+    "test plan",
+    "regression test",
+    "regression tests",
+    "fixture",
+    "fixtures",
+    "mock",
+    "mocks",
+    "mocking",
+    "assertion",
+    "assertions",
+    "verify",
+    "verification",
+    "acceptance criteria",
+    "release gate",
+    "prove",
+    "proof",
+    "evidence",
+    "definition of done",
+    "done criteria",
+    "tdd",
+    "test-driven",
+    "test suite",
+    "test runner",
+    "jest",
+    "vitest",
+    "pytest",
+    "playwright",
+    "cypress",
+    "snapshot test"
+  ],
+  "negative_triggers": [],
+  "risk_level": "low",
+  "context_cost": "medium",
+  "requires": [],
+  "optional_with": [],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "test output with counts, not a claim",
+    "every applicable repository gate run or explicitly listed as skipped with a reason"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [
+    "references/completion-gate.md"
+  ],
+  "status": "stable",
+  "responsibilities": [
+    "test-selection",
+    "completion-gate",
+    "evidence-standard",
+    "flaky-test-handling"
+  ],
+  "priority": 58,
+  "provenance": [
+    "janefskills 1.2.0 engineering-standard (completion gate, evidence rules)",
+    "agent-engineering-stack 1.1.0 testing-verification",
+    "lean-code-engineer 0.1.0 references/verification.md and modules/testing"
+  ]
+}

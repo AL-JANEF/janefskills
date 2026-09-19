@@ -1,0 +1,71 @@
+{
+  "id": "git-discipline",
+  "name": "Git Discipline",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Keep history safe and meaningful: inspect status and diff before and after editing, preserve unrelated user work, scope commits logically, write accurate messages, resolve conflicts by understanding both sides, and never rewrite shared history, force-push, or discard work without explicit authorization. Use for commits, branches, merges, rebases, and PR hygiene.",
+  "triggers": [
+    "git",
+    "commit",
+    "commits",
+    "commit message",
+    "commit messages",
+    "branch",
+    "branches",
+    "branching",
+    "merging",
+    "rebase",
+    "rebasing",
+    "squash",
+    "cherry-pick",
+    "cherry pick",
+    "merge conflict",
+    "conflicts",
+    "resolve conflicts",
+    "stash",
+    "gitignore",
+    ".gitignore",
+    "revert",
+    "amend",
+    "tag the release",
+    "pr hygiene",
+    "pull request description",
+    "pr description",
+    "conventional commits",
+    "git history",
+    "rewrite history",
+    "force push",
+    "hard reset",
+    "git reset",
+    "merge the branch",
+    "merge into",
+    "git merge"
+  ],
+  "negative_triggers": [
+    "pre commit",
+    "pre-commit"
+  ],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "git status and diff inspected before and after the change",
+    "no secrets, artifacts, or unrelated files staged"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "history-integrity",
+    "commit-hygiene"
+  ],
+  "priority": 45,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 git-discipline"
+  ]
+}

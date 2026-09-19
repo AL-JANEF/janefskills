@@ -1,0 +1,60 @@
+{
+  "id": "documentation-integrity",
+  "name": "Documentation Integrity",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Document implemented, verified reality in the repository's existing source of truth: READMEs, API references, ADRs, runbooks, migration notes, changelogs, and code comments. Use when documentation must be written, updated, or checked for drift; never document unverified capabilities.",
+  "triggers": [
+    "documentation",
+    "document",
+    "documenting",
+    "docs",
+    "readme",
+    "changelog",
+    "release notes",
+    "runbook",
+    "runbooks",
+    "api docs",
+    "api documentation",
+    "docstring",
+    "docstrings",
+    "comment",
+    "comments",
+    "jsdoc",
+    "guide",
+    "tutorial",
+    "migration guide",
+    "how-to",
+    "onboarding doc",
+    "architecture doc",
+    "wiki",
+    "contributing",
+    "user guide",
+    "reference docs",
+    "explain how"
+  ],
+  "negative_triggers": [],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "documented behavior cross-checked against code or a run",
+    "links and examples verified"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "documentation-accuracy",
+    "knowledge-capture"
+  ],
+  "priority": 40,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 documentation-integrity"
+  ]
+}

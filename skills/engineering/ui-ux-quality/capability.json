@@ -1,0 +1,73 @@
+{
+  "id": "ui-ux-quality",
+  "name": "UI/UX Quality",
+  "version": "2.0.0",
+  "domain": "engineering",
+  "description": "Make product flows clear and recoverable: primary action and next step obvious, forms with clear labels, validation timing, actionable errors, preserved input on failure, consistent navigation and terminology, and no hidden or surprising destructive actions. Use for user flows, forms, navigation, onboarding, dialogs, and interaction design.",
+  "triggers": [
+    "ux",
+    "user experience",
+    "user flow",
+    "user flows",
+    "form",
+    "forms",
+    "form validation",
+    "navigation",
+    "nav",
+    "onboarding",
+    "wizard",
+    "stepper",
+    "modal",
+    "dialog",
+    "empty state",
+    "loading state",
+    "usability",
+    "interaction",
+    "interactions",
+    "microcopy",
+    "call to action",
+    "cta",
+    "confirmation",
+    "confirm dialog",
+    "undo",
+    "toast",
+    "notification ui",
+    "search ui",
+    "filters",
+    "sorting ui",
+    "settings page",
+    "checkout flow",
+    "signup flow",
+    "error state",
+    "friction",
+    "login flow",
+    "recovery flow"
+  ],
+  "negative_triggers": [],
+  "risk_level": "low",
+  "context_cost": "small",
+  "requires": [],
+  "optional_with": [
+    "frontend-design-quality",
+    "accessibility-quality"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "first-use, empty, loading, failure, retry, and completion flows exercised",
+    "form validation timing and error recovery checked"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [],
+  "status": "stable",
+  "responsibilities": [
+    "task-flow-clarity",
+    "form-and-interaction-design"
+  ],
+  "priority": 50,
+  "provenance": [
+    "agent-engineering-stack 1.1.0 ui-ux-quality"
+  ]
+}

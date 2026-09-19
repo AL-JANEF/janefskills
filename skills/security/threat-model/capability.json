@@ -1,0 +1,63 @@
+{
+  "id": "threat-model",
+  "name": "Threat Model (STRIDE)",
+  "version": "2.0.0",
+  "domain": "security",
+  "description": "Structured STRIDE threat modeling at design time, before code exists: name assets, actors, and trust boundaries, walk Spoofing/Tampering/Repudiation/Information disclosure/Denial of service/Elevation of privilege at each boundary, rate and prioritize, and turn mitigations into build tasks. Use when designing a system, feature, or API or asking what could go wrong. Defensive only.",
+  "triggers": [
+    "threat model",
+    "threat modeling",
+    "threat modelling",
+    "stride",
+    "attack surface",
+    "what could go wrong",
+    "trust boundary",
+    "trust boundaries",
+    "abuse case",
+    "abuse cases",
+    "security design",
+    "secure design",
+    "security architecture",
+    "risk analysis",
+    "security requirements",
+    "before we build",
+    "designing a",
+    "design a new",
+    "new system",
+    "architecture review for security",
+    "attacker",
+    "adversary",
+    "threats"
+  ],
+  "negative_triggers": [],
+  "risk_level": "high",
+  "context_cost": "medium",
+  "requires": [],
+  "optional_with": [
+    "architecture-integrity",
+    "auth-hardening",
+    "vuln-audit"
+  ],
+  "conflicts_with": [],
+  "verification_requirements": [
+    "every accepted threat has a mitigation, acceptance, or transfer decision",
+    "top mitigations converted into concrete build tasks"
+  ],
+  "supported_hosts": [
+    "claude-code",
+    "codex"
+  ],
+  "references": [
+    "references/example.md",
+    "references/stride-prompts.md"
+  ],
+  "status": "stable",
+  "responsibilities": [
+    "design-time-threat-analysis"
+  ],
+  "priority": 60,
+  "provenance": [
+    "janefskills 1.2.0 threat-model",
+    "lean-code-engineer 0.1.0 modules/security (scope the threat)"
+  ]
+}

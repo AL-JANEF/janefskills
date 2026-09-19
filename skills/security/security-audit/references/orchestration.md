@@ -1,7 +1,7 @@
 # Orchestration Reference
 
-Exact commands and procedure for the `/janef full security pass`. This is what
-turns janef from an LLM-only reviewer into a coordinator of real tooling. Read it
+Exact commands and procedure for the the `security-audit` full pass. This is what
+turns the pass from an LLM-only reviewer into a coordinator of real tooling. Read it
 before running the full pass.
 
 ## The three automated tools
@@ -91,7 +91,7 @@ the report rather than blindly echoing the tool's severity.
 
 3. **Run Layer 2 (LLM expert review).** Apply the specialists in order:
    threat-model → secrets-guard → auth-hardening → vuln-audit → security-logging →
-   engineering-standard. Reason about logic, auth, tenant isolation, design —
+   then `implementation-quality` for the quality bar. Reason about logic, auth, tenant isolation, design —
    what scanners can't see.
 
 4. **Run Layer 3 (reconcile).** For every scanner finding, read the code and
@@ -122,5 +122,5 @@ State these in every report so the boundary is visible:
   a high-stakes or government launch.
 - **Formal verification** — mathematical proof of correctness.
 
-`/janef` makes the static and review layers exhaustive and honest. The dynamic and
+`security-audit` makes the static and review layers exhaustive and honest. The dynamic and
 human layers are a deliberate, stated gap — not a silent one.

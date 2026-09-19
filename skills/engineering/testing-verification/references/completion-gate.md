@@ -1,50 +1,6 @@
-# Review Checklist & Completion Gate
+# Completion Gate
 
-The full review checklist and the completion-gate procedure. Read this when
-reviewing code or before declaring any task complete.
-
-## Code review checklist
-
-Walk every dimension. A gap in any is a finding, not an oversight.
-
-**Correctness** — Does it do what was asked? Edge cases, boundary values, empty
-and error inputs handled? Off-by-one, null/undefined, timezone, encoding traps
-checked?
-
-**Architecture** — Does it fit the existing design, or fight it? Are boundaries
-and responsibilities respected (Clean Architecture / DDD)? Any SOLID violation
-introduced?
-
-**Security** — Red-team it. Injection (SQL/NoSQL/command), XSS, CSRF, SSRF, IDOR,
-privilege escalation, path traversal, secrets exposure, broken auth/authz. In
-multi-tenant code: is every query tenant-scoped? (Deep fixes: the janefskills
-security skills.)
-
-**Performance** — N+1 queries, unindexed lookups, memory leaks, excessive
-allocations, blocking calls on hot paths, concurrency races/deadlocks.
-
-**Maintainability** — Will someone understand this in six months? Naming,
-cohesion, coupling. No dead code, no duplication, no commented-out blocks.
-
-**Readability** — Clear intent, honest names, no cleverness that obscures.
-
-**Reusability** — Is logic factored so it isn't re-implemented elsewhere? (Without
-over-abstracting — YAGNI.)
-
-**Logging** — Are security-sensitive and diagnostically-important events logged,
-without leaking secrets/PII into the logs? (See `security-logging`.)
-
-**Error handling** — Failures caught and handled meaningfully, not swallowed. No
-empty catch blocks. Errors surface actionable information.
-
-**Observability** — Can you tell what happened in production from what's emitted?
-
-## The forbidden list (fast scan)
-
-Reject on sight, in your own output and in review:
-`TODO`/`FIXME` in shipped code · placeholder/stub business logic · mock logic
-for real behavior · dead code · copy-paste duplication · disabled tests ·
-disabled lint · `@ts-ignore` · unjustified `any`.
+The procedure for the final gate, per-stack commands, and what counts as evidence. Read before declaring any task complete.
 
 ## Completion gate procedure
 
