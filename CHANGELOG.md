@@ -41,7 +41,7 @@ LeanCode Engineer 0.1.0 into one engineering-discipline system. See
 
 ### Changed
 - Skills moved from the repository root to `skills/core`, `skills/engineering`,
-  `skills/security`, `skills/compat`. Plugin name and marketplace remain `janefskills`.
+  `skills/security`, `skills/compat`. Repository, plugin, and marketplace identities are `janef-forge`; historical `janefskills` references are retained only for provenance and migration.
 - `janef` is now a deprecated alias for `forge`; `/janef full security pass` maps to
   `security-audit`.
 - `engineering-standard` split into the contract, `implementation-quality`,

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="JANEF Forge" width="100%">
+  <img src="./assets/janef-forge-banner.png" alt="JANEF Forge by AL-JANEF" width="100%">
 </p>
 
 <p align="center">
@@ -10,8 +10,8 @@
   <img src="https://img.shields.io/badge/Claude%20Code-primary-9DB0C8" alt="Claude Code primary">
   <img src="https://img.shields.io/badge/Codex-structure%20verified-16273F" alt="Codex structure verified">
   <br>
-  <img src="https://img.shields.io/github/stars/AL-JANEF/janefskills?style=flat&color=D4AF61" alt="GitHub stars">
-  <img src="https://img.shields.io/github/last-commit/AL-JANEF/janefskills?color=16273F" alt="Last commit">
+  <img src="https://img.shields.io/github/stars/AL-JANEF/janef-forge?style=flat&color=D4AF61" alt="GitHub stars">
+  <img src="https://img.shields.io/github/last-commit/AL-JANEF/janef-forge?color=16273F" alt="Last commit">
 </p>
 
 <h1 align="center">JANEF Forge</h1>
@@ -37,8 +37,8 @@ JANEF Forge gives a coding agent one short engineering contract, a deterministic
 Claude Code (marketplace):
 
 ```text
-/plugin marketplace add AL-JANEF/janefskills
-/plugin install janefskills@janefskills
+/plugin marketplace add AL-JANEF/janef-forge
+/plugin install janef-forge@janef-forge
 ```
 
 Then start any substantive task with `/forge <task>`, or `/forge lean <task>` / `/forge high-assurance <task>` to pick a profile. `/forge security pass` runs the audit-grade multi-layer security review. The old `/janef` still works as a deprecated alias.

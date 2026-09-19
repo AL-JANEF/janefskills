@@ -1,14 +1,14 @@
 {
-  "name": "janefskills",
+  "name": "janef-forge",
   "owner": {
     "name": "ALJANEF",
     "url": "https://github.com/AL-JANEF"
   },
-  "description": "JANEF Forge \u2014 engineering discipline for AI coding agents, maintained by ALJANEF.",
+  "description": "JANEF Forge — engineering discipline for AI coding agents, maintained by ALJANEF.",
   "version": "2.0.0",
   "plugins": [
     {
-      "name": "janefskills",
+      "name": "janef-forge",
       "displayName": "JANEF Forge",
       "source": "./",
       "description": "JANEF Forge: engineering discipline for AI coding agents. One router, 24 engineering and defensive-security capabilities, three profiles, evidence-gated completion.",
@@ -17,8 +17,8 @@
         "name": "ALJANEF",
         "url": "https://github.com/AL-JANEF"
       },
-      "homepage": "https://github.com/AL-JANEF/janefskills",
-      "repository": "https://github.com/AL-JANEF/janefskills",
+      "homepage": "https://github.com/AL-JANEF/janef-forge",
+      "repository": "https://github.com/AL-JANEF/janef-forge",
       "license": "MIT",
       "keywords": [
         "agent-skills",

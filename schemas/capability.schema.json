@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/AL-JANEF/janefskills/schemas/capability.schema.json",
+  "$id": "https://github.com/AL-JANEF/janef-forge/schemas/capability.schema.json",
   "title": "JANEF Forge capability manifest",
   "description": "Machine-readable declaration of one skill. Validated by core/schema.py (stdlib subset validator) and by the registry.",
   "type": "object",
