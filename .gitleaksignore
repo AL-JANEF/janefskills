@@ -1,4 +1,4 @@
-# Historical documentation placeholders in the original 1.1.0 commit.
+# Historical documentation placeholders in the original 1.1.0 commit (paths as they were then).
 # These exact fingerprints do not suppress future findings.
 167c6a3bce3ee128560543a2f456b8027420b343:janefskills/secrets-guard/references/setup.md:stripe-access-token:29
 167c6a3bce3ee128560543a2f456b8027420b343:janefskills/secrets-guard/SKILL.md:generic-api-key:55

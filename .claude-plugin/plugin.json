@@ -1,7 +1,8 @@
 {
   "name": "janefskills",
-  "description": "Eight defensive security and evidence-gated engineering skills for Claude Code.",
-  "version": "1.2.0",
+  "displayName": "JANEF Forge",
+  "description": "JANEF Forge: engineering discipline for AI coding agents. One router, 24 engineering and defensive-security capabilities, three profiles, evidence-gated completion.",
+  "version": "2.0.0",
   "author": {
     "name": "ALJANEF",
     "url": "https://github.com/AL-JANEF"
@@ -10,20 +11,42 @@
   "repository": "https://github.com/AL-JANEF/janefskills",
   "license": "MIT",
   "keywords": [
-    "application-security",
     "agent-skills",
     "claude-code",
+    "codex",
+    "engineering-discipline",
+    "application-security",
     "secure-coding",
-    "threat-modeling"
+    "threat-modeling",
+    "progressive-disclosure",
+    "context-efficiency"
   ],
   "skills": [
-    "./janef",
-    "./engineering-standard",
-    "./threat-model",
-    "./auth-hardening",
-    "./vuln-audit",
-    "./variant-hunt",
-    "./secrets-guard",
-    "./security-logging"
+    "./skills/core/forge",
+    "./skills/engineering/accessibility-quality",
+    "./skills/engineering/api-contracts",
+    "./skills/engineering/architecture-integrity",
+    "./skills/engineering/context-efficiency",
+    "./skills/engineering/database-integrity",
+    "./skills/engineering/delegation-discipline",
+    "./skills/engineering/devops-reliability",
+    "./skills/engineering/documentation-integrity",
+    "./skills/engineering/frontend-design-quality",
+    "./skills/engineering/git-discipline",
+    "./skills/engineering/implementation-quality",
+    "./skills/engineering/performance-scalability",
+    "./skills/engineering/review-defect-first",
+    "./skills/engineering/root-cause-debugging",
+    "./skills/engineering/testing-verification",
+    "./skills/engineering/ui-ux-quality",
+    "./skills/security/auth-hardening",
+    "./skills/security/secrets-guard",
+    "./skills/security/security-audit",
+    "./skills/security/security-logging",
+    "./skills/security/skill-security-audit",
+    "./skills/security/threat-model",
+    "./skills/security/variant-hunt",
+    "./skills/security/vuln-audit",
+    "./skills/compat/janef"
   ]
 }
