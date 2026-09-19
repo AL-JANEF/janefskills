@@ -89,13 +89,22 @@ def validate_packaging(reg) -> list[str]:
     except (OSError, json.JSONDecodeError) as exc:
         return [f"plugin metadata unreadable: {exc}"]
     expected = [f"./{cap.path.relative_to(ROOT).as_posix()}" for cap in reg.ordered()]
+    if plugin.get("name") != "janef-forge":
+        errors.append("plugin.json name must be janef-forge")
     if plugin.get("skills") != expected:
         errors.append("plugin.json skills must list every registry capability in registry order")
     if plugin.get("version") != VERSION:
         errors.append(f"plugin.json version must be {VERSION}")
     entries = market.get("plugins") or []
-    if len(entries) != 1 or entries[0].get("version") != VERSION or market.get("version") != VERSION:
-        errors.append(f"marketplace.json must declare one plugin at version {VERSION}")
+    if market.get("name") != "janef-forge":
+        errors.append("marketplace.json name must be janef-forge")
+    if (
+        len(entries) != 1
+        or entries[0].get("name") != "janef-forge"
+        or entries[0].get("version") != VERSION
+        or market.get("version") != VERSION
+    ):
+        errors.append(f"marketplace.json must declare one janef-forge plugin at version {VERSION}")
     for cap in reg.capabilities.values():
         if cap.manifest["version"] != VERSION:
             errors.append(f"{cap.id}: manifest version must be {VERSION}")

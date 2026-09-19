@@ -108,7 +108,7 @@ Always-loaded surface: host listing metadata (name + description of every capabi
 
 ## Host adapters
 
-- **Claude Code** (primary): `.claude-plugin/plugin.json` lists every capability directory; the repository is its own marketplace; namespace `janefskills` is unchanged so existing installs and `/janefskills:janef` keep working. `adapters/claude-code/CLAUDE.md.fragment` is the optional always-on policy block.
+- **Claude Code** (primary): `.claude-plugin/plugin.json` lists every capability directory; the repository is its own marketplace; the namespace is `janef-forge`, with `/janef-forge:forge` as the primary namespaced entry and `/janef-forge:janef` retained only as a deprecated compatibility alias. `adapters/claude-code/CLAUDE.md.fragment` is the optional always-on policy block.
 - **Codex**: `adapters/codex/interface.json` is rendered into `agents/openai.yaml` per skill at install time, so skill content never carries host metadata. `AGENTS.md.fragment` is the policy block. Structure is verified by tests; behavioral parity is recorded in `docs/compatibility.md` only when actually observed.
 - Adding a host = adding an adapter directory and an installer renderer. Skill content does not change.
 

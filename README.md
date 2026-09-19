@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="JANEF Forge" width="100%">
+  <img src="./assets/janef-forge-banner.png" alt="JANEF Forge by AL-JANEF" width="100%">
 </p>
 
 <p align="center">
@@ -38,7 +38,7 @@ Claude Code (marketplace):
 
 ```text
 /plugin marketplace add AL-JANEF/janef-forge
-/plugin install janefskills@janefskills
+/plugin install janef-forge@janef-forge
 ```
 
 Then start any substantive task with `/forge <task>`, or `/forge lean <task>` / `/forge high-assurance <task>` to pick a profile. `/forge security pass` runs the audit-grade multi-layer security review. The old `/janef` still works as a deprecated alias.

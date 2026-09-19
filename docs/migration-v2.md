@@ -1,6 +1,6 @@
 # Migrating to JANEF Forge 2.0
 
-JANEF Forge 2.0 consolidates janefskills 1.x, Agent Engineering Stack 1.x, and LeanCode Engineer 0.1 into one product in this repository. The plugin name and marketplace (`janefskills`) are unchanged, so existing Claude Code installs update in place.
+JANEF Forge 2.0 consolidates janefskills 1.x, Agent Engineering Stack 1.x, and LeanCode Engineer 0.1 into one product in this repository. The repository, plugin, and marketplace identities are now `janef-forge`. Existing `janefskills` marketplace/plugin installs should be removed and reinstalled using `/plugin marketplace add AL-JANEF/janef-forge` followed by `/plugin install janef-forge@janef-forge`. Historical `janefskills` references remain only where they document 1.x provenance.
 
 ## What changed
 

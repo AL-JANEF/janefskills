@@ -2,7 +2,7 @@
 
 | Host | Status | Install path | Verified how |
 |---|---|---|---|
-| Claude Code 2.1.278 | **Primary** | Marketplace (`/plugin marketplace add AL-JANEF/janef-forge`, `/plugin install janefskills@janefskills`), `claude --plugin-dir .`, or `python3 scripts/install.py install --target claude` | `claude plugin validate .` passes on the release commit (run in the quality gate when the CLI is present); installer tests cover managed install, upgrade, uninstall, doctor, policy merge |
+| Claude Code 2.1.278 | **Primary** | Marketplace (`/plugin marketplace add AL-JANEF/janef-forge`, `/plugin install janef-forge@janef-forge`), `claude --plugin-dir .`, or `python3 scripts/install.py install --target claude` | `claude plugin validate .` passes on the release commit (run in the quality gate when the CLI is present); installer tests cover managed install, upgrade, uninstall, doctor, policy merge |
 | Codex | **Structure verified; behavior not yet observed** | `python3 scripts/install.py install --target codex` renders `agents/openai.yaml` per skill from `adapters/codex/interface.json` | Installer tests assert the rendered metadata and the `$CODEX_HOME/skills/<id>/SKILL.md` layout. No interactive Codex session has been recorded yet; parity is not claimed until a smoke run is added to this table |
 | Cursor, OpenCode, Gemini CLI, other Agent Skills hosts | **Not supported** | Copy skill directories manually at your own risk | Nothing verified. Adapters can be added without changing skill content (see architecture § Host adapters) |
 
